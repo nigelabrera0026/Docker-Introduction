@@ -7,7 +7,7 @@ This is a step by step process on how to create a web application using react, t
 We will first create a React application with Vite
 
 - Create a folder where you want your project to be placed.
-- Open your bash terminal and paste this command.
+- Open your bash terminal and paste this script.
 
 ```bash
 npm create vite@latest project_name -- --template react-ts
@@ -20,7 +20,7 @@ cd project_name
 npm install
 ```
 
-- If you would like to run the application, you need to be inside the project directory.
+- If you would like to run the application, you need to be inside the project directory and type the script below.
 ```bash
 npm run dev
 ```
@@ -124,23 +124,33 @@ sudo docker image ls -a
 ```
 
 - To delete a docker container.
+Replace (container_id) with the actual id of your container (each one is unique).
+You can check the container id by listing all the containers that you have.
+You can only delete a container if it's not running.
 ```bash
-sudo docker rm (container_id)
+sudo docker rm container_id
 ```
-Notes:
-    You can check the container id by listing all the containers that you have.
-    You can only delete a container if it's not running.
+
 
 - To delete a docker image.
+Replace (image_id) with the actual id of your container (each one is unique).
+You can only delete an image if the image is not being used by a container.
+Delete the container first before the image.
+You can see the image id by listing all the images that you have.
 ```bash
-sudo docker rmi (image_id)
+sudo docker rmi image_id
 ```
-Notes:
-    You can only delete an image if the image is not being used by a container.
-    Delete the container first before the image.
-    You can see the image id by listing all the images that you have.
 
-# React + TypeScript + Vite + Docker
+
+- To re-run the container
+If you want to run the container again, use docker start
+Replace (image_id) with the actual id of your container (each one is unique).
+```bash
+sudo docker start image_id
+```
+
+
+# React + TypeScript + Vite
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
