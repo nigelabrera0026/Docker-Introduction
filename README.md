@@ -1,6 +1,6 @@
 # React, Typescript, and Vite inside Docker
 
-This is a step by step process on how to create a web application using react, typescript, and vite. Including the steps to create, build, and run the containerized application in a specific port of your localhost, so you could access it in you local machine.
+This is a step by step process on how to create a web application using react, typescript, and vite. Including the steps to create, build, and run the containerized application in a specific port of your localhost, so you could access it in your local machine.
 
 ## Creating a new react app with Vite
 
