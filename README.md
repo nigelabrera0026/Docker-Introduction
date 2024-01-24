@@ -3,10 +3,6 @@
 This is a step by step process on how to create a web application using react, typescript, and vite. Including the steps to create, build, and run the containerized application in a specific port of your localhost, so you could access it in your local machine.
 
 
-
-
-
-
 ## Creating a new react app with Vite
 
 We will first create a React application with Vite
@@ -29,11 +25,6 @@ npm install
 ```bash
 npm run dev
 ```
-
-
-
-
-
 
 ## Creating a Dockerfile
 
@@ -70,10 +61,6 @@ CMD npm run dev -- --host 0.0.0.0
 ```
 
 
-
-
-
-
 ## Dockerfile information
 
 Here is a list of information about each line in the Dockerfile.
@@ -89,11 +76,6 @@ Here is a list of information about each line in the Dockerfile.
 - We will be exposing the port 7775 to give external accessibility outside the container.
 
 - The last line would be executing npm run dev to start the application inside the docker.
-
-
-
-
-
 
 
 ## Build and Run the app inside Docker
@@ -130,13 +112,6 @@ The `5173` is the port inside docker where the app is connected.
 The last part is the image name.
 
 Now you can access it in your `localhost:7775`.
-
-
-
-
-
-
-
 
 ## Additional information for Docker
 
