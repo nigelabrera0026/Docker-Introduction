@@ -135,7 +135,7 @@ sudo docker rm container_id
 
 
 - To delete a docker image.
-Replace (image_id) with the actual id of your container (each one is unique).
+Replace (image_id) with the actual id of your image (each one is unique).
 You can only delete an image if the image is not being used by a container.
 Delete the container first before the image.
 You can see the image id by listing all the images that you have.
@@ -150,12 +150,6 @@ Replace (image_id) with the actual id of your container (each one is unique).
 ```bash
 sudo docker start image_id
 ```
-
-
-
-
-
-
 
 
 
