@@ -53,7 +53,7 @@ COPY . .
 RUN npm run build
 
 # Expose the port the app will run on
-EXPOSE 7775
+EXPOSE 8083
 
 # Run the app using CMD
 CMD npm run dev -- --host 0.0.0.0
@@ -75,7 +75,7 @@ Here is a list of information about each line in the Dockerfile.
 
 - Now we will be building the react app using npm run build.
 
-- We will be exposing the port 7775 to give external accessibility outside the container.
+- We will be exposing the port 8083 to give external accessibility outside the container.
 
 - The last line would be executing npm run dev to start the application inside the docker.
 
@@ -104,16 +104,16 @@ and the ` . ` means the path of the project we're going to build.
 - To run the Docker image that was recently created, we will use Docker run. We will also map the port to the localhost using `-p` to access the app.
 
 ```bash
-sudo docker run -p 7775:5173 abrera_nigel_coding_assignment11
+sudo docker run -p 8083:5173 abrera_nigel_coding_assignment11
 ```
 
-The `7775` is the port to our localhost so we could access it.
+The `8083` is the port to our localhost so we could access it.
 
 The `5173` is the port inside docker where the app is connected.
 
 The last part is the image name.
 
-Now you can access it in your `localhost:7775`.
+Now you can access it in your `localhost:8083` or `127.0.0.1:8083`.
 
 ## Additional information for Docker
 
@@ -154,6 +154,12 @@ sudo docker start image_id
 ```
 
 
+- To stop the container that is running.
+If the server is running and you can't ctrl + c or other command. Don't Panic! you just need to open another terminal and stop the container from running.
+Replace (container_id) with the actual id of your container (each one is unique).
+```bash
+sudo docker container stop container_id
+```
 
 # React + TypeScript + Vite
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

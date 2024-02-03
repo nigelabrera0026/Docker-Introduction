@@ -17,7 +17,7 @@ COPY . .
 RUN npm run build
 
 # Expose the port the app will run on
-EXPOSE 7775
+EXPOSE 8083
 
 # Setting Env port to 7775
 # ENV PORT 7775
