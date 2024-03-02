@@ -4,22 +4,10 @@
 */
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { ButtonProps } from './Button.types';
 
-interface ButtonProps {
-  primary?: boolean;
-  backgroundColor?: string;
-  size?: 'small' | 'medium' | 'large';
-  label?: string;
-  disabled?: boolean;
-  onClick?: () => void;
-}
+// TODO: Implement Disabled state then do themes.
 
-/*
-Disabled css attr.
-color: #333;
-background-color: transparent;
-box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
-*/
 const StyledButton = styled.button<ButtonProps>`
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 400;
@@ -63,12 +51,12 @@ const StyledButton = styled.button<ButtonProps>`
           color: #333;
           background-color: transparent;
           box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
-          cursor: not-allowed;
+
         }
 
         /* Hover state */
         &:not(:disabled):hover {
-          box-shadow: 0px 2px 0px 4px rgba(0,0,0,0.1);
+          box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
         }
 `;
 

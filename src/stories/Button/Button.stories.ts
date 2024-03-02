@@ -4,7 +4,6 @@
 */
 
 import type { Meta, StoryObj } from '@storybook/react';
-
 import { Button } from '../../components/Button/Button';
 
 const meta: Meta = {
@@ -61,6 +60,7 @@ export const Small: Story = {
 
 export const Disabled: Story = {
   args:{
+    disabled: true,
     label: 'Button',
   },
 };
