@@ -7,6 +7,8 @@ interface CardProps {
   backgroundColor?: string;
   size?: 'mobile' | 'normal';
   label?: string;
+  title: string;
+  content: string;
   
 }
 

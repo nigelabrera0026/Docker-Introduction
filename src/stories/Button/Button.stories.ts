@@ -4,6 +4,7 @@
 */
 
 import type { Meta, StoryObj } from '@storybook/react';
+
 import { Button } from '../../components/Button/Button';
 
 const meta: Meta = {
@@ -28,7 +29,7 @@ export const Primary: Story = {
   },
 };
 
-export const Secondary: Story = {
+export const Outline: Story = {
   args: {
     label: 'Button',
   },
@@ -38,14 +39,6 @@ export const Large: Story = {
   args: {
     primary: true,
     size: 'large',
-    label: 'Button',
-  },
-};
-
-export const Medium: Story = {
-  args: {
-    primary: true,
-    size: 'medium',
     label: 'Button',
   },
 };

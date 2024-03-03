@@ -11,7 +11,6 @@ import { ButtonProps } from './Button.types';
 const StyledButton = styled.button<ButtonProps>`
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 400;
-  border: 0;
   min-width: 90px;
   letter-spacing: 0.6px;
   border-radius: 3px;
@@ -19,45 +18,55 @@ const StyledButton = styled.button<ButtonProps>`
   display: inline-block;
   line-height: 1;
 
+
   ${({ primary }) =>
     primary
       ? css`
+          border: 0;
           color: white;
           background-color: #F1B080;
         `
       : css`
+          border: 1px solid #f1b080;
           color: #F1B080;
           background-color: transparent;
-          box-shadow: #F1B080 0px 0px 0px 1px inset;
         `};
 
-  ${({ size }) =>
-    size === 'small'
-      ? css`
+  ${({ size }) => size === 'small'? css`
           font-size: 12px;
           padding: 10px 16px;
         `
-      : size === 'medium'
+      : size === 'large'
       ? css`
-          font-size: 14px;
-          padding: 11px 20px;
-        `
-      : css`
           font-size: 16px;
           padding: 12px 24px;
+        `
+      : css`
+          font-size: 14px;
+          padding: 11px 20px;
         `};
 
+        /* Disabled State */
         &:disabled {
+          border: 0;
           color: #333;
           background-color: transparent;
           box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
 
         }
 
+        /* Pressed state */
+        &:not(:disabled):active {
+          box-shadow: none;
+          transform: translateY(1px);
+        }
+
         /* Hover state */
         &:not(:disabled):hover {
           box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
         }
+
+
 `;
 
 export const Button: React.FC<ButtonProps> = ({
