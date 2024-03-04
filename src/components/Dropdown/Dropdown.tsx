@@ -9,11 +9,15 @@ import { DropdownProps } from './Dropdown.types';
 import { Button } from '../Button/Button';
 import { Text } from '../Text/Text';
 
+/*
+Todo: Restructure code, and implement button and text later,
+
+*/
 
 // Dropdown Container
 const DropdownContainer = styled.div<DropdownProps>`
   position: relative;
-  ${({primary}) => primary ? css`background: #F1B080` : `background: #FFFFFF`};
+  ${({primary}) => primary ? css`background: #F1B080` : css`background: #FFFFFF`}
 `;
 
 // The Connect button
@@ -59,13 +63,13 @@ const DropdownItem = styled(Text)<DropdownProps>`
   & > * {
     color: #F1B080;
     // Fixme: The code below doesn't apply because the props are not implemented to this.
-    ${({primary}) => primary ? css`color: #F1B080` : css`color: #FFFFFF`};
+    ${({primary}) => primary ? css`color: #F1B080` : css`color: #FFFFFF`}
 
-  }
+  };
 
   &:hover {
     background: #f2f2f2;
-  }
+  };
 `;
 
 
