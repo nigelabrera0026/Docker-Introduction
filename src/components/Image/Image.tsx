@@ -11,6 +11,7 @@ import { ImageProps } from './Image.types';
 // Todo: probably make the size a variant.
 const ImageComponent = styled.img<ImageProps>`
   display: block;
+  border: 0 solid white;
   border-radius: 10%;
 
   ${({ size }) => size === 'mobile' ? css`

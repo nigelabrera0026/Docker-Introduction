@@ -20,7 +20,7 @@ type Story = StoryObj<typeof meta>;
 export const Mobile: Story = {
   args: {
     size: 'mobile',
-    src: '../../../public/IMG_2441Copy.jpg',
+    src: '/IMG_2441Copy.jpg',
     alt: 'Nigel_Abrera_image',
   },
 };
@@ -28,7 +28,7 @@ export const Mobile: Story = {
 export const Normal: Story = {
   args: {
     size: 'normal',
-    src: '../../../public/IMG_2441Copy.jpg',
+    src: 'IMG_2441Copy.jpg',
     alt: 'Nigel_Abrera_image',
   },
 };

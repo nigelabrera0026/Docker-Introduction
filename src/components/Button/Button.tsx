@@ -6,7 +6,6 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { ButtonProps } from './Button.types';
 
-// TODO: Implement Disabled state then do themes.
 const StyledButton = styled.button<ButtonProps>`
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 400;
