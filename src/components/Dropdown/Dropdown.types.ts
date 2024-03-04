@@ -4,9 +4,10 @@
 */
 
 interface DropdownProps {
-  primary?: boolean,
-  options: string[];
+  primary?: boolean;
   error?: boolean;
+  open?: boolean;
+  backgroundColor?: string;
 }
 
 export type { DropdownProps};

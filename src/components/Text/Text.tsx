@@ -25,7 +25,7 @@ const StyledText = styled.p<TextProps>`
   ` : size === 'large' ? css`
       font-size: 45px;
   ` : css`
-      font-size: 25px;
+      font-size: 20px;
   `};
 
   ${({ variant }) => variant === 'light'? css`
@@ -49,7 +49,10 @@ export const Text: React.FC<TextProps> = ({
   ...props
 }) => {
   return (
-    <StyledText primary={ primary } size={ size } style={{ backgroundColor }}  variant={variant} {...props}>
+    <StyledText primary={ primary }
+                size={ size }
+                style={{ backgroundColor }}
+                variant={variant} {...props}>
       { children }
     </StyledText>
   )
