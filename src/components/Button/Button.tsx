@@ -7,7 +7,6 @@ import styled, { css } from 'styled-components';
 import { ButtonProps } from './Button.types';
 
 // TODO: Implement Disabled state then do themes.
-
 const StyledButton = styled.button<ButtonProps>`
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 400;
@@ -53,18 +52,18 @@ const StyledButton = styled.button<ButtonProps>`
           background-color: transparent;
           box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
 
-        }
+        };
 
         /* Pressed state */
         &:not(:disabled):active {
           box-shadow: none;
           transform: translateY(1px);
-        }
+        };
 
         /* Hover state */
         &:not(:disabled):hover {
           box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-        }
+        };
 
 
 `;

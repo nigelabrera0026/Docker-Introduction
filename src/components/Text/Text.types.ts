@@ -3,11 +3,13 @@
 @date:      March 03, 2024
 */
 interface TextProps {
+  variant?: 'normal' | 'light' | 'bold';
   primary?: boolean;
   backgroundColor?: string;
-  disable?: boolean;
+  disabled?: boolean;
   words?: string;
   size?: 'small' | 'medium' | 'large';
+  children?: React.ReactNode;
 }
 
 export type { TextProps };

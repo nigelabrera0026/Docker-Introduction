@@ -15,15 +15,16 @@ const meta: Meta = {
   },
   tags: ['autodocs'],
   argTypes: {
-    backgroundColor: { control: 'color' },
+    backgroundColor: { control: 'color'},
   },
-};
+} satisfies Meta<typeof Button>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
+    size: 'medium',
     primary: true,
     label: 'Button',
   },
