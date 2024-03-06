@@ -12,9 +12,9 @@ const meta: Meta = {
   tags: ['autodocs'],
   argTypes: {
     variant: {
-      control: { type: 'select', options: ['normal', 'bold', 'light'] },
+      control: { type: 'select', options: ['normal', 'bold', 'lighter'] },
     },
-    words: {
+    children: {
       control: 'text'
     },
     size: {
@@ -64,3 +64,5 @@ export const Disabled: Story = {
     size: 'medium',
   },
 };
+//# Important Dev Notes
+// After installing active_admin and active_storage, make sure you include sassc in the gemfile.

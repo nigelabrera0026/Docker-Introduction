@@ -3,7 +3,7 @@
 @date:      March 03, 2024
 */
 interface TextProps {
-  variant?: 'normal' | 'light' | 'bold';
+  variant?: 'normal' | 'lighter' | 'bold';
   primary?: boolean;
   backgroundColor?: string;
   disabled?: boolean;

@@ -28,13 +28,17 @@ const StyledText = styled.p<TextProps>`
       font-size: 20px;
   `};
 
-  ${({ variant }) => variant === 'light'? css`
+  ${({ variant }) => variant === 'lighter'? css`
       font-weight: lighter;
     `: variant ==='bold'? css`
       font-weight: bold;
     ` : css`
       font-weight: normal;
     `};
+
+    &:disabled {
+      color: #333;
+    };
 
   ${({ disabled }) => disabled && css`color: #333;`};
 `;
@@ -43,7 +47,6 @@ export const Text: React.FC<TextProps> = ({
   primary = false,
   size = 'medium',
   backgroundColor,
-  words = "Sample Text",
   variant = 'normal',
   children,
   ...props
