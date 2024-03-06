@@ -10,6 +10,7 @@ interface TextProps {
   words?: string;
   size?: 'small' | 'medium' | 'large';
   children?: React.ReactNode;
+  error?: boolean;
 }
 
 export type { TextProps };

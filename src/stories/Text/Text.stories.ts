@@ -64,5 +64,14 @@ export const Disabled: Story = {
     size: 'medium',
   },
 };
+
+export const Error: Story = {
+  args:{
+    primary: true,
+    children: "The quick brown fox jumps over the lazy dog",
+    size: 'medium',
+    error: true,
+  },
+};
 //# Important Dev Notes
 // After installing active_admin and active_storage, make sure you include sassc in the gemfile.

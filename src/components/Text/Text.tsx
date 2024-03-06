@@ -18,6 +18,7 @@ const StyledText = styled.p<TextProps>`
     ` : css`
       color: #FFFFFF;
     `
+
     };
 
   ${({ size }) => size === 'small'? css`
@@ -36,11 +37,11 @@ const StyledText = styled.p<TextProps>`
       font-weight: normal;
     `};
 
-    &:disabled {
-      color: #333;
-    };
+
 
   ${({ disabled }) => disabled && css`color: #333;`};
+  ${({ error }) => error && css`color:  red;`}
+
 `;
 
 export const Text: React.FC<TextProps> = ({
@@ -48,6 +49,7 @@ export const Text: React.FC<TextProps> = ({
   size = 'medium',
   backgroundColor,
   variant = 'normal',
+  error = false,
   children,
   ...props
 }) => {
@@ -55,7 +57,8 @@ export const Text: React.FC<TextProps> = ({
     <StyledText primary={ primary }
                 size={ size }
                 style={{ backgroundColor }}
-                variant={variant} {...props}>
+                variant={variant}
+                error={error} {...props}>
       { children }
     </StyledText>
   )

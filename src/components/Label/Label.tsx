@@ -3,7 +3,6 @@
 @date:      March 04, 2024
 */
 
-import React from 'react';
 import styled, { css } from 'styled-components';
 import { LabelProps } from './Label.types';
 import { Text } from '../Text/Text';
@@ -35,12 +34,14 @@ const LabelWrapper = styled.label<LabelProps>`
       font-size: 25px;
     `};
 
-  ${({disabled}) => disabled && css`
+  &:disabled {
     color: #333;
-  `};
+  }
+
+
 
   ${({ error }) => error && css`
-    color: red;
+    color: red;th
   `}
 `;
 
@@ -55,7 +56,6 @@ const Input = styled.input<{ error?: boolean }>`
   }
 
 
-  // fixme NOT WORKING
   ${({ error }) => error && css`border-color:  red;`}
 `;
 
@@ -73,9 +73,9 @@ export const Label = ({
   return(
     <LabelContainer error={error} variant={variant} >
       <LabelWrapper error={error} variant={variant}>
-        <Text primary={true} >{label}</Text>
+        <Text primary={true} error={error} {...props}>{label}</Text>
       </LabelWrapper>
-      <Input {...props} variant={variant}/>
+      <Input {...props} error={error}/>
     </LabelContainer>
   );
 };
