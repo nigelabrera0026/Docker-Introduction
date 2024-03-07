@@ -58,7 +58,8 @@ export const Table: React.FC<TableProps> = ({ columns, data, footer }) => {
       <TableStyled size="1.2rem">
         <thead>
           <tr>
-            {columns.map((column, index) => index < 2 && <ThStyled key={column.key} colSpan={2}><Text primary={true}>{column.title}</Text></ThStyled>)}
+            {columns.map((column, index) => index < 2 && <ThStyled key={column.key} colSpan={2}>
+              <Text primary={true}>{column.title}</Text></ThStyled>)}
           </tr>
         </thead>
         <tbody>

@@ -12,6 +12,6 @@ export interface TableColumn {
 export interface TableProps {
   columns: TableColumn[];
   data: any[][];
-  children?: React.ReactNode; // Footer type, allowing for JSX content
+  children?: React.ReactNode; 
   footer?: React.ReactNode;
 }
