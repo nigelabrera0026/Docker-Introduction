@@ -24,12 +24,12 @@ type Story = StoryObj<typeof meta>;
 
 export const Mobile: Story = {
   args: {
-    // Todo: Input size.
+    size: 'mobile',
   },
 };
 
 export const Normal: Story = {
   args: {
-    // Todo: Input size.
+    size: 'normal',
   },
 };

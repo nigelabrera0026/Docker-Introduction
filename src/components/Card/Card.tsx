@@ -13,7 +13,7 @@ const StyledCard = styled.div<CardProps>`
   align-items: center;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 280px; // Adjust width as per your design
+  width: 280px;
   padding: 16px;
   background-color: #fff;
   margin: 8px;
@@ -21,7 +21,7 @@ const StyledCard = styled.div<CardProps>`
 
 const StyledImageContainer = styled.div<CardProps>`
   width: 100%;
-  height: 160px; // Adjust height as per your design
+  height: 160px;
   margin-bottom: 16px;
   overflow: hidden;
   border-radius: 4px;
@@ -33,44 +33,25 @@ const StyledImage = styled.img<CardProps>`
 `;
 
 const StyledTextTitle = styled(Text)`
-  font-size: 1.25rem; // Adjust font size as per your design
+  font-size: 1.25rem;
   font-weight: bold;
   margin-bottom: 8px;
   color: grey;
 `;
 
 const StyledTextBody = styled(Text)`
-  font-size: 1rem; // Adjust font size as per your design
+  font-size: 1rem;
   margin-bottom: 16px;
   color: #666;
   text-align: center;
 `;
 
 const StyledButton = styled(Button)`
-  font-size: 1rem; // Adjust font size as per your design
+  font-size: 1rem;
   padding: 8px 16px;
   border-radius: 4px;
   border: none;
   cursor: pointer;
-  /* Disabled State */
-  &:disabled {
-        border: 0;
-        color: #333;
-        background-color: transparent;
-        box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
-
-      };
-
-      /* Pressed state */
-      &:not(:disabled):active {
-        box-shadow: none;
-        transform: translateY(1px);
-      };
-
-      /* Hover state */
-      &:not(:disabled):hover {
-        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-      };
 `;
 
 export const Card =({
@@ -79,7 +60,6 @@ export const Card =({
   disabled=false,
   linker="Learn More",
   content="Lorem ipsum somthing, this needs to have a truncation at length x",
-
 }: CardProps) => {
   return (
     <StyledCard size={size}>
@@ -88,7 +68,7 @@ export const Card =({
       </StyledImageContainer>
       <StyledTextTitle >{title}</StyledTextTitle>
       <StyledTextBody>{content}</StyledTextBody>
-      <StyledButton primary={true} label={linker}></StyledButton>
+      <StyledButton primary={true} label={linker} disabled={disabled}></StyledButton>
     </StyledCard>
   );
 };
