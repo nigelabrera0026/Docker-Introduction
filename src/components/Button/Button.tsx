@@ -17,8 +17,7 @@ const StyledButton = styled.button<ButtonProps>`
   line-height: 1;
 
 
-  ${({ primary }) =>
-    primary
+  ${({ primary }) => primary
       ? css`
           border: 0;
           color: white;

@@ -7,10 +7,6 @@ import styled, { css } from 'styled-components';
 import { LabelProps } from './Label.types';
 import { Text } from '../Text/Text';
 
-
-// Todo: Implement Error state and disabled state,
-//       Modify Styling for the wrapper and stuff
-
 const LabelContainer = styled.div<LabelProps>`
   display: inline-block;
 
