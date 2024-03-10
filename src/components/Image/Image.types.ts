@@ -10,4 +10,4 @@ interface ImageProps {
   disabled?: boolean;
 }
 
-export type { ImageProps };
+export type { ImageProps };``

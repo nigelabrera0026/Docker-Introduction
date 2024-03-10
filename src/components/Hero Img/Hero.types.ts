@@ -7,6 +7,6 @@ interface HeroProps {
   primary?: boolean;
   backgroundColor?: string;
 
-}
+};
 
 export type { HeroProps };
