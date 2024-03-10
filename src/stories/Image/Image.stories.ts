@@ -22,6 +22,7 @@ export const Mobile: Story = {
     size: 'mobile',
     src: 'IMG_2441Copy.jpg',
     alt: 'Nigel_Abrera_image',
+    disabled: false,
   },
 };
 

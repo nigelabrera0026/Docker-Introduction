@@ -23,12 +23,18 @@ const ImageComponent = styled.img<ImageProps>`
     height: 135px;
 
   `};
+
+  ${({ disabled }) => disabled ? css`
+    opacity: 50%;
+  `:css`
+    opacity: 100%;
+  `};
 `;
 
-export const Image: React.FC<ImageProps> = ({src, alt, size = 'normal'}) => {
+export const Image: React.FC<ImageProps> = ({src, alt, size = 'normal', disabled}) => {
   return (
     <>
-      <ImageComponent src={src} alt={alt} size={size}/>
+      <ImageComponent disabled={disabled} src={src} alt={alt} size={size}/>
     </>
   );
 };

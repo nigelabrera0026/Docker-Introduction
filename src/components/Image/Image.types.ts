@@ -7,6 +7,7 @@ interface ImageProps {
   src: string;
   alt: string;
   size?: 'mobile' | 'normal';
+  disabled?: boolean;
 }
 
 export type { ImageProps };
