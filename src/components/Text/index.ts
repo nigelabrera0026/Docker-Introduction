@@ -1,1 +1,1 @@
-import 
+import { Text } from "./Text";

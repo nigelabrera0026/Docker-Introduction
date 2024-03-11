@@ -33,3 +33,9 @@ export const Normal: Story = {
     size: 'normal',
   },
 };
+
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+  }
+}

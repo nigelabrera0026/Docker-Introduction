@@ -46,7 +46,9 @@ const DropdownButton = styled(Button)<DropdownProps>`
 const DropdownContent = styled.ul<DropdownProps>`
 /* Implemented logic of open is clicked */
   display: ${({ open }) => (open ? 'block' : 'none')};
+
   position: absolute;
+  
   ${({primary}) => primary ? css`background: #F1B080` : css`background: #FFFFFF`};
   text-align: centered;
 
