@@ -40,6 +40,12 @@ const DropdownButton = styled(Button)<DropdownProps>`
     content: '▼';
     float: right;
   }
+
+  ${({disabled}) => disabled ? css`
+    cursor: none;
+  ` : css`
+
+  `}
 `;
 
 // Dropdown Content
@@ -48,7 +54,7 @@ const DropdownContent = styled.ul<DropdownProps>`
   display: ${({ open }) => (open ? 'block' : 'none')};
 
   position: absolute;
-  
+
   ${({primary}) => primary ? css`background: #F1B080` : css`background: #FFFFFF`};
   text-align: centered;
 
@@ -78,7 +84,8 @@ const DropdownItem = styled(Text)<DropdownProps>`
 const Dropdown: React.FC<DropdownProps> = ({
   backgroundColor,
   error=false,
-  primary=true
+  primary=true,
+  disabled=false,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -86,7 +93,7 @@ const Dropdown: React.FC<DropdownProps> = ({
 
   return (
     <DropdownContainer backgroundColor={backgroundColor}>
-      <DropdownButton as={Button} onClick={toggleDropdown} label='CONNECT'/>
+      <DropdownButton as={Button} onClick={toggleDropdown} label='CONNECT' disabled={disabled}/>
       <DropdownContent open={isOpen} primary={primary}>
         <DropdownItem><Text>ABOUT</Text></DropdownItem>
         <DropdownItem><Text>CONTACT</Text></DropdownItem>

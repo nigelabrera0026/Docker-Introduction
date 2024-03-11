@@ -8,6 +8,7 @@ interface DropdownProps {
   error?: boolean;
   open?: boolean;
   backgroundColor?: string;
+  disabled?: boolean,
 }
 
 export type { DropdownProps};

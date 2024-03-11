@@ -4,7 +4,7 @@
 */
 
 import type { Meta, StoryObj } from '@storybook/react';
-import Dropdown from '../../components/Dropdown/Dropdown';
+import Dropdown from './Dropdown';
 
 const meta: Meta = {
   title: 'Components/Dropdown',
@@ -29,3 +29,8 @@ export const Primary: Story = {
   },
 };
 
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+  }
+}

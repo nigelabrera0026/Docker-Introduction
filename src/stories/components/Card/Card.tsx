@@ -52,6 +52,8 @@ const StyledButton = styled(Button)`
   border-radius: 4px;
   border: none;
   cursor: pointer;
+
+  
 `;
 
 export const Card =({
