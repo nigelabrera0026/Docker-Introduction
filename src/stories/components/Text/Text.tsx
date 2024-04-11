@@ -7,7 +7,6 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { TextProps } from './Text.types';
 
-// styled.p for paragraph
 const StyledText = styled.p<TextProps>`
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   letter-spacing: 0.6px;
@@ -21,23 +20,11 @@ const StyledText = styled.p<TextProps>`
 
     };
 
-  ${({ size }) => size === 'small'? css`
+  ${({ size }) => size === 'mobile'? css`
       font-size: 10px;
-  ` : size === 'large' ? css`
-      font-size: 45px;
   ` : css`
       font-size: 20px;
   `};
-
-  ${({ variant }) => variant === 'lighter'? css`
-      font-weight: lighter;
-    `: variant ==='bold'? css`
-      font-weight: bold;
-    ` : css`
-      font-weight: normal;
-    `};
-
-
 
   ${({ disabled }) => disabled && css`color: #333;`};
   ${({ error }) => error && css`color:  red;`}
@@ -46,9 +33,8 @@ const StyledText = styled.p<TextProps>`
 
 export const Text: React.FC<TextProps> = ({
   primary = false,
-  size = 'medium',
+  size = 'normal',
   backgroundColor,
-  variant = 'normal',
   error = false,
   children,
   ...props
@@ -57,7 +43,7 @@ export const Text: React.FC<TextProps> = ({
     <StyledText primary={ primary }
                 size={ size }
                 style={{ backgroundColor }}
-                variant={variant}
+
                 error={error} {...props}>
       { children }
     </StyledText>

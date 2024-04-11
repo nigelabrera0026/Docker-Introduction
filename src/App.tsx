@@ -42,9 +42,9 @@ Sizes : mobile | normal
 1) Finish designing componens
 
 Button Done
-Label
-  
-Text
+Label Done
+
+Text //? I guess done? might affect other stuff
 Table
 	Table header
 	Table row
