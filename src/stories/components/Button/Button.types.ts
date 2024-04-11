@@ -3,9 +3,8 @@
 @date:      March 02, 2024
 */
 interface ButtonProps {
-  primary?: boolean;
   backgroundColor?: string;
-  size?: 'small' | 'medium' | 'large';
+  size?: 'mobile' | 'normal';
   label?: string;
   disabled?: boolean;
   onClick?: () => void;

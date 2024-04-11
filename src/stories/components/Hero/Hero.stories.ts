@@ -1,8 +1,6 @@
-
-
-
 import { Meta, StoryObj } from '@storybook/react';
-import Hero from '../../components/Hero Img/Hero';
+import Hero from "./Hero";
+
 
 const meta: Meta = {
   title: 'Components/Hero',

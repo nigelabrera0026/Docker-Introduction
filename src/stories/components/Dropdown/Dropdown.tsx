@@ -9,95 +9,63 @@ import { DropdownProps } from './Dropdown.types';
 import { Button } from '../Button/Button';
 import { Text } from '../Text/Text';
 
-/*
-Todo: Restructure code, and implement button and text later,
-
-*/
-
-// Dropdown Container
 const DropdownContainer = styled.div<DropdownProps>`
   position: relative;
-  ${({primary}) => primary ? css`background: #F1B080` : css`background: #FFFFFF`}
+  background: ${({ primary }) => (primary ? '#F1B080' : 'white')};
+  width: max-content;
 `;
 
-// The Connect button
 const DropdownButton = styled(Button)<DropdownProps>`
-
-  ${({primary}) => primary ? css`
-  background: transparent;
-  color: #F1B080
-  ` : css`
-  background: #F1B080;
-  color: #FFFFFF
-
-  `};
-  border: none;
-  cursor: pointer;
   width: 200px;
-  text-align: center;
   padding: 10px;
+  border: none;
+  background: ${({ primary }) => (primary ? 'transparent' : '#F1B080')};
+  color: ${({ primary }) => (primary ? '#F1B080' : 'white')};
+  text-align: left;
   &:after {
-    content: '▼';
+    content: ${({ open }) => (open ? "'▲'" : "'▼'")};
     float: right;
   }
-
-  ${({disabled}) => disabled ? css`
-    cursor: none;
-  ` : css`
-
-  `}
 `;
 
-// Dropdown Content
 const DropdownContent = styled.ul<DropdownProps>`
-/* Implemented logic of open is clicked */
   display: ${({ open }) => (open ? 'block' : 'none')};
-
   position: absolute;
-
-  ${({primary}) => primary ? css`background: #F1B080` : css`background: #FFFFFF`};
-  text-align: centered;
-
-  z-index: 0;
+  background: ${({ primary }) => (primary ? '#F1B080' : 'white')};
+  margin-top: 5px;
+  box-shadow: ${({ open }) => (open ? '0px 8px 16px 0px rgba(0,0,0,0.2)' : 'none')};
+  z-index: 1;
+  width: 200px;
+  padding: 0;
 `;
 
-// Dropdown Items
-const DropdownItem = styled(Text)<DropdownProps>`
-  text-decoration: none;
-  display: absolute;
-  width: 100px;
-
-  /* The code belows is saying that this applies to the children of DropdownItem */
-  & > * {
-    color: #F1B080;
-    // Fixme: The code below doesn't apply because the props are not implemented to this.
-    ${({primary}) => primary ? css`color: #F1B080` : css`color: #FFFFFF`}
-
-  };
-
+const DropdownItem = styled.li<DropdownProps>`
+  list-style: none;
+  padding: 10px;
+  color: ${({ primary }) => (primary ? 'white' : '#F1B080')};
+  background: ${({ primary }) => (primary ? '#F1B080' : 'white')};
   &:hover {
-    background: #f2f2f2;
-  };
+    background: ${({ primary }) => (primary ? 'rgba(255,255,255,0.2)' : 'rgba(0,0,0,0.05)')};
+  }
 `;
-
 
 const Dropdown: React.FC<DropdownProps> = ({
-  backgroundColor,
-  error=false,
-  primary=true,
-  disabled=false,
+  primary = true,
+  disabled = false,
+  ...props
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const toggleDropdown = () => setIsOpen(!isOpen);
+  const toggleDropdown = () => !disabled && setIsOpen(!isOpen);
 
   return (
-    <DropdownContainer backgroundColor={backgroundColor}>
-      <DropdownButton as={Button} onClick={toggleDropdown} label='CONNECT' disabled={disabled}/>
+    <DropdownContainer primary={primary} {...props}>
+      <DropdownButton as="button" onClick={toggleDropdown} open={isOpen} primary={primary} disabled={disabled}>
+        <Text disabled={disabled}>CONNECT</Text>
+      </DropdownButton>
       <DropdownContent open={isOpen} primary={primary}>
-        <DropdownItem><Text>ABOUT</Text></DropdownItem>
-        <DropdownItem><Text>CONTACT</Text></DropdownItem>
-        <DropdownItem><Text>CONTENTS</Text></DropdownItem>
+        <DropdownItem primary={primary}><Text disabled={disabled}>ABOUT</Text></DropdownItem>
+        <DropdownItem primary={primary}><Text>CONTACT</Text></DropdownItem>
+        <DropdownItem primary={primary}><Text>CONTENTS</Text></DropdownItem>
       </DropdownContent>
     </DropdownContainer>
   );

@@ -6,6 +6,8 @@
 interface HeroProps {
   primary?: boolean;
   backgroundColor?: string;
+  size: 'mobile' | 'normal';
+  disabled?: boolean;
 
 };
 

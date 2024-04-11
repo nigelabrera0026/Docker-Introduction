@@ -55,10 +55,6 @@ const Input = styled.input<{ error?: boolean }>`
   ${({ error }) => error && css`border-color:  red;`}
 `;
 
-/*
-
-
-*/
 
 export const Label = ({
   label="Email Address",

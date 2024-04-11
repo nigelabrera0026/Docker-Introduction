@@ -6,31 +6,37 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { HeroProps } from './Hero.types';
-import { Text } from '../Text/Text';
-import { Image } from '../Image/Image';
 
 
-const StyledHeroWrapper = styled.div<HeroProps>`
-  display: inline-block;
-`;
 
-const StyledText = styled(Text)`
+const StyledHeroWrapper = styled.img<HeroProps>`
+  display: block;
+  border: 0 solid white;
+  border-radius: 10%;
 
-`;
+  ${({ size }) => size === 'mobile' ? css`
+    width: 55px;
+    height: 65px;
 
-const StyledImg = styled(Image)`
+  ` : css`
+    width: 120px;
+    height: 135px;
 
+  `};
+
+  ${({ disabled }) => disabled ? css`
+    opacity: 50%;
+  `:css`
+    opacity: 100%;
+  `};
 `;
 
 export const Hero: React.FC<HeroProps> = ({
 
 }) => {
   return (
-    <StyledHeroWrapper>
-      <Text size={'medium'}>Hi I'm</Text><br/>
-      <Text size={'large'}>Nigel Abrera</Text><br/>
-      <Text size={'medium'}>and I'm a developer.</Text>
-      <Image size={"normal"} src={"../../../public/IMG_2441Copy"} alt={'Something'}/>
-    </StyledHeroWrapper>
+    <>
+      <StyledHeroWrapper />
+    </>
   );
 };

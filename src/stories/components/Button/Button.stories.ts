@@ -22,35 +22,12 @@ const meta: Meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const Normal: Story = {
   args: {
-    size: 'medium',
-    primary: true,
+    size: 'normal',
     label: 'Button',
-  },
-};
-
-export const Outline: Story = {
-  args: {
-    label: 'Button',
-  },
-};
-
-export const Large: Story = {
-  args: {
-    primary: true,
-    size: 'large',
-    label: 'Button',
-  },
-};
-
-export const Small: Story = {
-  args: {
-    primary: true,
-    size: 'small',
-    label: 'Button',
-  },
-};
+  }
+}
 
 export const Disabled: Story = {
   args:{

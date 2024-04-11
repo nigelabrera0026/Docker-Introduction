@@ -34,3 +34,34 @@ function App() {
 }
 
 export default App
+/*
+TODO: COMPONENTS  UI
+
+Sizes : mobile | normal
+
+1) Finish designing componens
+
+Button Done
+Label
+  
+Text
+Table
+	Table header
+	Table row
+	Table cell
+	Table footer
+Dropdown
+Radio button
+Img
+Hero Image
+Card
+  rename linker
+
+
+
+
+2) implement Storybook test and jest test
+
+3) do the github actions
+
+*/
