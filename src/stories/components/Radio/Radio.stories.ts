@@ -26,7 +26,6 @@ export const Default: Story = {
       { label: 'Option 2', value: 'option2' },
       { label: 'Option 3', value: 'option3'},
     ],
-    name: "exampleGroup",
     onChange: (value: string) => console.log(value),
   },
 };
@@ -36,10 +35,20 @@ export const Disabled: Story = {
   args: {
     options: [
       { label: 'Option 1', value: 'option1', disabled: true },
-      { label: 'Option 2', value: 'option2' },
+      { label: 'Option 2', value: 'option2', disabled: true  },
+      { label: 'Option 3', value: 'option3', disabled: true },
+    ],
+    onChange: (value: string) => console.log(value),
+  },
+}
+
+export const SelectiveDisabled: Story = {
+  args: {
+    options: [
+      { label: 'Option 1', value: 'option1', disabled: true },
+      { label: 'Option 2', value: 'option2'},
       { label: 'Option 3', value: 'option3'},
     ],
-    name: "exampleGroup",
     onChange: (value: string) => console.log(value),
   },
 }

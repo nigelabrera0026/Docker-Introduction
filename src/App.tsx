@@ -43,15 +43,16 @@ Sizes : mobile | normal
 
 Button Done
 Label Done
+Radio button Done
 
 Text //? I guess done? might affect other stuff
+
 Table
 	Table header
 	Table row
 	Table cell
 	Table footer
 Dropdown
-Radio button
 Img
 Hero Image
 Card
