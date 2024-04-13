@@ -28,12 +28,21 @@ export const Normal: Story = {
       src: 'image_component.jpg', // Replace with your image path
       alt: 'Image description',
       size: 'mobile',
-      disabled: false
     },
     size: 'normal',
   },
 };
 
+export const Disabled: Story = {
+  args: {
+    image: {
+      src: 'image_component.jpg',
+      alt: 'Image description',
+      size: 'mobile',
+    },
+    disabled: true,
+  }
+}
 
 export const Mobile: Story = {
   args: {
@@ -47,14 +56,15 @@ export const Mobile: Story = {
   },
 };
 
-export const Disabled: Story = {
+export const MobileDisabled: Story = {
   args: {
     image: {
-      src: 'image_component.jpg', 
+      src: 'image_component.jpg',
       alt: 'Image description',
       size: 'mobile',
-      disabled: false
     },
     disabled: true,
-  }
-}
+    size: 'mobile',
+  },
+};
+

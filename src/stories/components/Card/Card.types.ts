@@ -6,7 +6,7 @@
 import { ImageProps } from '../Image/Image.types';
 
 interface CardProps {
-  image?: ImageProps;
+  image: ImageProps;
   backgroundColor?: string;
   size?: 'mobile' | 'normal';
   disabled?: boolean,

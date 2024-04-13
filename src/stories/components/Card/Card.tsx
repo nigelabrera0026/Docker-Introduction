@@ -6,7 +6,7 @@ import styled, { css } from 'styled-components';
 import { CardProps } from './Card.types';
 import { Text } from '../Text/Text';
 import { Button } from '../Button/Button';
-
+import { ImageProps } from  '../Image/Image.types';
 
 const StyledCard = styled.div<{ size?: 'mobile' | 'normal' }>`
   display: flex;
@@ -26,7 +26,7 @@ const StyledCard = styled.div<{ size?: 'mobile' | 'normal' }>`
   `};
 `;
 
-const StyledImageContainer = styled.div<CardProps>`
+const StyledImageContainer = styled.div<{ size?: 'mobile' | 'normal' }>`
   width: 100%;
   ${({ size }) => size === 'mobile' ? css`
     height: 80px;
@@ -38,7 +38,7 @@ const StyledImageContainer = styled.div<CardProps>`
   border-radius: 4px;
 `;
 
-const StyledImage = styled.img<CardProps>`
+const StyledImage = styled.img<ImageProps>`
   width: 100%;
   height: auto;
 `;
