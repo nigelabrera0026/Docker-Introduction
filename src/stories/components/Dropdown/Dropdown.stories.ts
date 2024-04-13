@@ -10,6 +10,7 @@ import { DropdownProps } from './Dropdown.types';
 const meta: Meta<DropdownProps> = {
   title: 'Components/Dropdown',
   component: Dropdown,
+  tags:['autodocs'],
   parameters: {
     layout: 'centered',
   },
@@ -17,28 +18,41 @@ const meta: Meta<DropdownProps> = {
 
 export default meta;
 
-export const Primary: StoryObj<DropdownProps> = {
+export const Default: StoryObj<DropdownProps> = {
   args: {
-    primary: true,
-  },
-};
-
-export const Secondary: StoryObj<DropdownProps> = {
-  args: {
-    primary: false,
-  },
+    size: 'normal'
+  }
 };
 
 export const Disabled: StoryObj<DropdownProps> = {
   args: {
     disabled: true,
-    primary: true,
   },
 };
 
 export const Open: StoryObj<DropdownProps> = {
   args: {
     open: true,
-    primary: true,
   },
 };
+
+export const Mobile: StoryObj<DropdownProps> = {
+  args: {
+    size: 'mobile'
+  }
+};
+
+export const MobileDisabled: StoryObj<DropdownProps> = {
+  args: {
+    disabled: true,
+    size: 'mobile'
+  }
+};
+
+export const MobileOpen: StoryObj<DropdownProps> = {
+  args: {
+    size: 'mobile',
+    open: true,
+  }
+};
+

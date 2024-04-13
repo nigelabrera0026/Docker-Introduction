@@ -36,9 +36,6 @@ function App() {
 export default App
 /*
 ? COMPONENTS UI
-! TODO: hero image then fix Card using the image component
-
-
 
 sizes : mobile | normal
 
@@ -56,7 +53,7 @@ Img DONE
 Card DONE
 Hero Image Done
 Text DONE
-Dropdown ?
+Dropdown Done
 
 
 

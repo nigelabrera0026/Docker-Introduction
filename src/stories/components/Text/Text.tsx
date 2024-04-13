@@ -10,7 +10,13 @@ import { TextProps } from './Text.types';
 const StyledText = styled.p<TextProps>`
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   letter-spacing: 0.6px;
+
+
+  ${({ primary }) => primary ? css`
   color: #F1B080;
+  ` : css`
+  color: #FFFFFF;
+  `};
 
 
   ${({ size }) => size === 'mobile'? css`
@@ -29,13 +35,14 @@ export const Text: React.FC<TextProps> = ({
   backgroundColor,
   error = false,
   children,
+  primary = true,
   ...props
 }) => {
   return (
     <StyledText
                 size={ size }
                 style={{ backgroundColor }}
-
+                primary={primary}
                 error={error} {...props}>
       { children }
     </StyledText>

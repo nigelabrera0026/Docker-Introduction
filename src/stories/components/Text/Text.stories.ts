@@ -37,19 +37,29 @@ export const Primary: Story = {
   },
 };
 
-export const Small: Story = {
+export const Secondary: Story = {
   args:{
-    primary: true,
     children: "The quick brown fox jumps over the lazy dog",
-    size: 'small'
+    primary: false,
+    size: 'medium',
+    variant: 'normal',
+    backgroundColor: "#F1B080",
   },
 };
 
-export const Large: Story = {
+export const Mobile: Story = {
   args:{
     primary: true,
     children: "The quick brown fox jumps over the lazy dog",
-    size: 'large',
+    size: 'mobile'
+  },
+};
+
+export const Normal: Story = {
+  args:{
+    primary: true,
+    children: "The quick brown fox jumps over the lazy dog",
+    size: 'normal',
   },
 };
 
@@ -70,5 +80,3 @@ export const Error: Story = {
     error: true,
   },
 };
-//# Important Dev Notes
-// After installing active_admin and active_storage, make sure you include sassc in the gemfile.
