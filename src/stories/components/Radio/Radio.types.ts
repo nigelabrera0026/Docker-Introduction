@@ -14,4 +14,5 @@ export interface RadioButtonProps {
   options: RadioButtonOption[];
   onChange: (value: string) => void;
   disabled?: boolean;
+  size: 'mobile' | 'normal'
 }

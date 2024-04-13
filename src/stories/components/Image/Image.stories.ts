@@ -17,20 +17,39 @@ const meta: Meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+
+export const Normal: Story = {
+  args: {
+    size: 'normal',
+    src: 'image_component.jpg',
+    alt: 'Nigel_Abrera_image',
+  },
+};
+
+export const NormalDisabled: Story = {
+  args: {
+    size: 'normal',
+    src: 'image_component.jpg',
+    alt: 'Nigel_Abrera_image',
+    disabled: true,
+  },
+};
+
 export const Mobile: Story = {
   args: {
     size: 'mobile',
-    src: 'IMG_2441Copy.jpg',
+    src: 'image_component.jpg',
     alt: 'Nigel_Abrera_image',
     disabled: false,
   },
 };
 
-export const Normal: Story = {
+export const MobileDisabled: Story = {
   args: {
-    size: 'normal',
-    src: 'IMG_2441Copy.jpg',
+    size: 'mobile',
+    src: 'image_component.jpg',
     alt: 'Nigel_Abrera_image',
+    disabled: true,
   },
 };
 

@@ -22,20 +22,39 @@ const meta: Meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Mobile: Story = {
+export const Normal: Story = {
   args: {
-    size: 'mobile',
+    image: {
+      src: 'image_component.jpg', // Replace with your image path
+      alt: 'Image description',
+      size: 'mobile',
+      disabled: false
+    },
+    size: 'normal',
   },
 };
 
-export const Normal: Story = {
+
+export const Mobile: Story = {
   args: {
-    size: 'normal',
+    image: {
+      src: 'image_component.jpg',
+      alt: 'Image description',
+      size: 'mobile',
+      disabled: false
+    },
+    size: 'mobile',
   },
 };
 
 export const Disabled: Story = {
   args: {
+    image: {
+      src: 'image_component.jpg', 
+      alt: 'Image description',
+      size: 'mobile',
+      disabled: false
+    },
     disabled: true,
   }
 }

@@ -26,25 +26,39 @@ export const Default: Story = {
   },
 };
 
-export const Mobile: Story = {
-  args: {
-    label: "Email address",
-    variant: 'mobile',
-    disable: false,
-  },
-};
-
 export const Disabled: Story = {
   args: {
     label: "Email address",
     disabled: true,
-  }
-}
+  },
+};
 
 export const Error: Story = {
   args: {
     label: "Email address",
     error: true,
+  },
+};
 
-  }
-}
+export const Mobile: Story = {
+  args: {
+    label: "Email address",
+    variant: 'mobile',
+  },
+};
+
+export const MobileDisabled: Story = {
+  args: {
+    label: "Email address",
+    variant: 'mobile',
+    disabled: true,
+  },
+};
+
+export const MobileError: Story = {
+  args: {
+    label: "Email address",
+    variant: 'mobile',
+    error: true,
+  },
+};

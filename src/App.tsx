@@ -35,28 +35,31 @@ function App() {
 
 export default App
 /*
-TODO: COMPONENTS  UI
+? COMPONENTS UI
+! TODO: hero image then fix Card using the image component
 
-Sizes : mobile | normal
+
+
+sizes : mobile | normal
 
 1) Finish designing componens
 
 Button Done
 Label Done
 Radio button Done
-
-Text //? I guess done? might affect other stuff
-
-Table
+Table Done
 	Table header
 	Table row
 	Table cell
 	Table footer
-Dropdown
-Img
-Hero Image
-Card
-  rename linker
+Img DONE
+
+Card DONE
+Dropdown ?
+Hero Image ?
+
+Text //? I guess done? might affect other stuff
+
 
 
 

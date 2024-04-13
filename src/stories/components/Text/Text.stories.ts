@@ -11,9 +11,6 @@ const meta: Meta = {
   component: Text,
   tags: ['autodocs'],
   argTypes: {
-    variant: {
-      control: { type: 'select', options: ['normal', 'bold', 'lighter'] },
-    },
     children: {
       control: 'text'
     },

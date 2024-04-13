@@ -2,112 +2,89 @@
 @author:    Nigel Abrera
 @date:      March 05, 2024
 */
-
-
+import React from 'react';
 import styled, { css } from 'styled-components';
 import { Text } from '../Text/Text';
 import { TableProps } from './Table.types';
 
-
-const TableStyled = styled.table<{ disabled?: boolean, size: string }>`
+const TableStyled = styled.table<{ isDisabled?: boolean, size: 'mobile' | 'normal' }>`
   width: 100%;
-  opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
-  font-size: ${({ size }) => (size === 'small' ? '0.8rem' : size === 'large' ? '1.2rem' : '1rem')};
+  opacity: ${({ isDisabled }) => (isDisabled ? 0.5 : 1)};
   border-collapse: collapse;
+
+  ${({ size }) => size === 'mobile' && css`
+    width: auto; // Adjust the width or max-width as needed for mobile
+  `};
 `;
 
-const ThStyled = styled.th`
-  padding: 10px;
+const ThStyled = styled.th<{ size: 'mobile' | 'normal' }>`
   background-color: #eee;
   border-bottom: 1px solid #ddd;
+
+  ${({ size }) => size === 'mobile' ? css`
+    padding: 6px; // Smaller padding on mobile
+  ` : css`
+    padding: 10px; // Larger padding on normal
+  `};
 `;
 
-const TheadStyled = styled.thead`
-  padding: 10px;
-  background-color: #eee;
+const TdStyled = styled.td<{ size: 'mobile' | 'normal' }>`
   border-bottom: 1px solid #ddd;
+
+  ${({ size }) => size === 'mobile' ? css`
+    padding: 4px; // Smaller padding on mobile
+  ` : css`
+    padding: 8px; // Larger padding on normal
+  `};
 `;
 
-const TrStyled = styled.tr<{ variant?: 'normal' | 'striped', index: number }>`
-  ${({ variant, index }) => variant === 'striped' && index % 2 && css`
-    background-color: #f2f2f2;
-  `}
-`;
-
-const TdStyled = styled.td`
-  padding: 8px;
-  border-bottom: 1px solid #ddd;
-`;
-
-const TfootStyled = styled.tfoot`
-  background-color: #000000;
+const TfootStyled = styled.tfoot<{ size: 'mobile' | 'normal' }>`
+  background-color: #f2f2f2;
   border-top: 2px solid #ddd;
+
+  td {
+    ${({ size }) => size === 'mobile' ? css`
+      padding: 6px; // Smaller padding on mobile
+    ` : css`
+      padding: 10px; // Larger padding on normal
+    `};
+  }
 `;
 
-const TbodyStyled = styled.tbody`
-  padding: 10px;
-  background-color: #eee;
-  border-bottom: 1px solid #ddd;
-`;
-
-
-
-export const Table: React.FC<TableProps> = ({ columns, data, footer }) => {
+export const Table: React.FC<TableProps> = ({ columns, data, footer, size = 'normal', disabled }) => {
   return (
-    <div>
-      <TableStyled size="1.2rem">
-        <thead>
-          <tr>
-            {columns.map((column, index) => index < 2 && <ThStyled key={column.key} colSpan={2}>
-              <Text primary={true}>{column.title}</Text></ThStyled>)}
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((row, rowIndex) => (
-            <TrStyled key={rowIndex} variant="normal" index={rowIndex}>
-              {row.slice(0, 2).map((cell, cellIndex) => (
-                <TdStyled key={cellIndex}><Text primary={true}>{cell}</Text></TdStyled>
-              ))}
-            </TrStyled>
+    <TableStyled isDisabled={disabled} size={size}>
+      <thead>
+        <tr>
+          {columns.map((column) => (
+            <ThStyled key={column.key} size={size}>
+              <Text size={size} disabled={disabled}>{column.title}</Text>
+            </ThStyled>
           ))}
-        </tbody>
-        {footer && (
-          <TfootStyled>
-            <tr>
-              <td colSpan={2}>{footer}</td>
-            </tr>
-          </TfootStyled>
-        )}
-      </TableStyled>
-    </div>
+        </tr>
+      </thead>
+      <tbody>
+        {data.map((row, rowIndex) => (
+          <tr key={rowIndex}>
+            {row.map((cell, cellIndex) => (
+              <TdStyled key={cellIndex} size={size}>
+                <Text size={size} disabled={disabled}>{cell}</Text>
+              </TdStyled>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+      {footer && (
+        <TfootStyled size={size}>
+          <tr>
+            <td colSpan={columns.length}>
+              <Text size={size} disabled={disabled}>{footer}</Text>
+            </td>
+          </tr>
+        </TfootStyled>
+      )}
+    </TableStyled>
   );
 };
 
-export default Table; // Exporting the Table component
-
-
-{/* <div>
-<TableStyled>
-  <thead>
-    <tr>
-      {columns.map((column, index) => index < 2 && <ThStyled key={column.key}><Text primary={true}>{column.title}</Text></ThStyled>)}
-    </tr>
-  </thead>
-  <tbody>
-    {data.map((row, rowIndex) => (
-      <TrStyled key={rowIndex} variant="normal" index={rowIndex}>
-        {row.slice(0, 2).map((cell, cellIndex) => (
-          <TdStyled key={cellIndex}><Text primary={true}>{cell}</Text></TdStyled>
-        ))}
-      </TrStyled>
-    ))}
-  </tbody>
-  {footer && (
-    <TfootStyled>
-      <tr>
-        <td colSpan={2}>{footer}</td>
-      </tr>
-    </TfootStyled>
-  )}
-</TableStyled>
-</div> */}
+export default Table;

@@ -40,7 +40,7 @@ export const Disabled: Story = {
     ],
     onChange: (value: string) => console.log(value),
   },
-}
+};
 
 export const SelectiveDisabled: Story = {
   args: {
@@ -51,5 +51,43 @@ export const SelectiveDisabled: Story = {
     ],
     onChange: (value: string) => console.log(value),
   },
-}
+};
+
+export const Mobile: Story = {
+  args: {
+    options: [
+      { label: 'Option 1', value: 'option1' },
+      { label: 'Option 2', value: 'option2' },
+      { label: 'Option 3', value: 'option3' },
+    ],
+    onChange: (value: string) => console.log(value),
+    size: 'mobile',
+  },
+};
+
+export const MobileDisabled: Story = {
+  args: {
+    options: [
+      { label: 'Option 1', value: 'option1' },
+      { label: 'Option 2', value: 'option2' },
+      { label: 'Option 3', value: 'option3' },
+    ],
+    onChange: (value: string) => console.log(value),
+    size: 'mobile',
+    disabled: true,
+  },
+};
+
+export const MobileSelectiveDisabled: Story = {
+  args: {
+    options: [
+      { label: 'Option 1', value: 'option1', disabled: true},
+      { label: 'Option 2', value: 'option2' },
+      { label: 'Option 3', value: 'option3' },
+    ],
+    onChange: (value: string) => console.log(value),
+    size: 'mobile',
+  },
+};
+
 

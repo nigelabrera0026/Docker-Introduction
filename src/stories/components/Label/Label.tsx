@@ -34,6 +34,8 @@ const Input = styled.input<LabelProps>`
     border-color: #333;
     background-color: #ccc;
     color: #333;
+    pointer-events: none;
+    opacity: 0.5;
   }
 
   ${({ error }) => error && css`
@@ -44,13 +46,14 @@ const Input = styled.input<LabelProps>`
 export const Label = ({
   label = "Email Address",
   variant = 'normal',
+  disabled = false, // Add default value for disabled
   error = false,
   ...props
 }: LabelProps) => {
   return (
-    <LabelContainer variant={variant} {...props}>
-      <Text size={variant} error={error}>{label}</Text>
-      <Input variant={variant} error={error} {...props} />
+    <LabelContainer disabled={disabled} variant={variant}>
+      <Text size={variant} error={error} disabled={disabled}>{label}</Text>
+      <Input disabled={disabled} variant={variant} error={error} {...props} />
     </LabelContainer>
   );
 };

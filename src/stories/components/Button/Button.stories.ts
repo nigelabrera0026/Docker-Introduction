@@ -36,3 +36,18 @@ export const Disabled: Story = {
   },
 };
 
+export const Mobile: Story = {
+  args: {
+    size: 'mobile',
+    label: 'Button',
+  }
+}
+
+export const MobileDisabled: Story = {
+  args: {
+    size: 'mobile',
+    label: 'Button',
+    disabled: true,
+  }
+}
+

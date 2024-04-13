@@ -2,34 +2,29 @@
 @author:    Nigel Abrera
 @date:      March 05, 2024
 */
-import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import Table from '../../components/Table/Table';
-import { TableColumn, TableProps } from '../../components/Table/Table.types';
+import { TableProps } from '../../components/Table/Table.types'; // Import the TableProps
 
-
-const meta: Meta = {
+const meta: Meta<TableProps> = {
   title: 'Components/Table',
   component: Table,
-  // argTypes: {
-  //   variant: {
-  //     control: { type: 'select', options: ['normal', 'striped'] },
-  //   },
-  //   size: {
-  //     control: { type: 'select', options: ['small', 'medium', 'large'] },
-  //   },
-  //   disabled: {
-  //     control: 'boolean',
-  //   },
-  // },
+  tags: ['autodocs'],
+  argTypes: {
+    disabled: {
+      control: 'boolean',
+    },
+  },
 } satisfies Meta<typeof Table>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+
+type Story = StoryObj<TableProps>;
 
 export const Default: Story = {
-  args:{
+  args: {
     columns: [
+      { key: 'col1', title: 'Column 1' },
       { key: 'col2', title: 'Column 2' },
     ],
     data: [
@@ -37,21 +32,31 @@ export const Default: Story = {
       ['Row 2, Cell 1', 'Row 2, Cell 2'],
       ['Row 3, Cell 1', 'Row 3, Cell 2'],
     ],
-    footer: 'This is a footer',
+    footer: "This is a Footer",
   },
 };
-// const Template: Story = (args) => <Table {...args} />;
 
-// export const Default = Template({});
-// Default.args = {
-//   columns: [
-//     { key: 'col1', title: 'Column 1' },
-//     { key: 'col2', title: 'Column 2' },
-//   ],
-//   data: [
-//     ['Row 1, Cell 1', 'Row 1, Cell 2'],
-//     ['Row 2, Cell 1', 'Row 2, Cell 2'],
-//     ['Row 3, Cell 1', 'Row 3, Cell 2'],
-//   ],
-//   footer: 'This is a footer',
-// };
+
+export const Disabled: Story = {
+  args: {
+    ...Default.args,
+    disabled: true,
+  },
+};
+
+export const Mobile: Story = {
+  args: {
+    ...Default.args,
+    size: 'mobile',
+  },
+};
+
+
+export const DisabledMobile: Story = {
+  args: {
+    ...Default.args,
+    disabled: true,
+    size: 'mobile',
+  },
+};
+
