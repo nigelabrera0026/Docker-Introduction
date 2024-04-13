@@ -22,7 +22,7 @@ export const Normal: Story = {
   args: {
     size: 'normal',
     src: 'image_component.jpg',
-    alt: 'Nigel_Abrera_image',
+    alt: 'Painting',
   },
 };
 
@@ -30,7 +30,7 @@ export const NormalDisabled: Story = {
   args: {
     size: 'normal',
     src: 'image_component.jpg',
-    alt: 'Nigel_Abrera_image',
+    alt: 'Painting',
     disabled: true,
   },
 };
@@ -39,7 +39,7 @@ export const Mobile: Story = {
   args: {
     size: 'mobile',
     src: 'image_component.jpg',
-    alt: 'Nigel_Abrera_image',
+    alt: 'Painting',
     disabled: false,
   },
 };
@@ -48,7 +48,7 @@ export const MobileDisabled: Story = {
   args: {
     size: 'mobile',
     src: 'image_component.jpg',
-    alt: 'Nigel_Abrera_image',
+    alt: 'Painting',
     disabled: true,
   },
 };

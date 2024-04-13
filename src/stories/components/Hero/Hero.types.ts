@@ -4,11 +4,11 @@
 */
 
 interface HeroProps {
-  primary?: boolean;
+  src: string;
+  alt: string;
   backgroundColor?: string;
   size: 'mobile' | 'normal';
   disabled?: boolean;
-
 };
 
 export type { HeroProps };

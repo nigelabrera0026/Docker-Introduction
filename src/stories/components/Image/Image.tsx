@@ -7,7 +7,6 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { ImageProps } from './Image.types';
 
-// Todo: probably make the size a variant.
 const ImageComponent = styled.img<ImageProps>`
   display: block;
   border: 0 solid white;

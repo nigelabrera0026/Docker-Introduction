@@ -7,20 +7,18 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { HeroProps } from './Hero.types';
 
-
-
-const StyledHeroWrapper = styled.img<HeroProps>`
+const HeroComponent = styled.img<HeroProps>`
   display: block;
   border: 0 solid white;
   border-radius: 10%;
 
   ${({ size }) => size === 'mobile' ? css`
-    width: 55px;
-    height: 65px;
+    width: 304px;
+    height: 171px;
 
   ` : css`
-    width: 120px;
-    height: 135px;
+    width: 609px;
+    height: 342.6px;
 
   `};
 
@@ -31,12 +29,10 @@ const StyledHeroWrapper = styled.img<HeroProps>`
   `};
 `;
 
-export const Hero: React.FC<HeroProps> = ({
-
-}) => {
+export const Hero: React.FC<HeroProps> = ({src, alt, size = 'normal', disabled}) => {
   return (
     <>
-      <StyledHeroWrapper />
+      <HeroComponent disabled={disabled} src={src} alt={alt} size={size}/>
     </>
   );
 };

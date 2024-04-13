@@ -53,14 +53,10 @@ Table Done
 	Table cell
 	Table footer
 Img DONE
-
 Card DONE
+Hero Image Done
+Text DONE
 Dropdown ?
-Hero Image ?
-
-Text //? I guess done? might affect other stuff
-
-
 
 
 
@@ -68,4 +64,5 @@ Text //? I guess done? might affect other stuff
 
 3) do the github actions
 
+4) Build shit.
 */
