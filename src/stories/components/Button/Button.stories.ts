@@ -31,13 +31,17 @@ export const Normal: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     await userEvent.click(canvas.getByTestId('Button'));
-  }
-}
+  },
+};
 
 export const Disabled: Story = {
   args:{
     disabled: true,
     label: 'Button',
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await userEvent.click(canvas.getByTestId('Button'));
   },
 };
 
@@ -45,7 +49,11 @@ export const Mobile: Story = {
   args: {
     size: 'mobile',
     label: 'Button',
-  }
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await userEvent.click(canvas.getByTestId('Button'));
+  },
 }
 
 export const MobileDisabled: Story = {
@@ -53,6 +61,10 @@ export const MobileDisabled: Story = {
     size: 'mobile',
     label: 'Button',
     disabled: true,
-  }
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await userEvent.click(canvas.getByTestId('Button'));
+  },
 }
 
