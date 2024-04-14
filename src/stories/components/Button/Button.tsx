@@ -57,10 +57,11 @@ export const Button: React.FC<ButtonProps> = ({
   size = 'normal',
   backgroundColor,
   label,
+  id = "button",
   ...props
 }) => {
   return (
-    <StyledButton size={size} style={{ backgroundColor }} {...props}>
+    <StyledButton size={size} style={{ backgroundColor }} {...props} id={id}>
       {label}
     </StyledButton>
   );

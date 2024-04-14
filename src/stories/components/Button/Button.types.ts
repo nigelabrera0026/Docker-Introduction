@@ -8,6 +8,7 @@ interface ButtonProps {
   label?: string;
   disabled?: boolean;
   onClick?: () => void;
+  id: string;
 }
 
 export type { ButtonProps };
