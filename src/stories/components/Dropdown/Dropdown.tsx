@@ -2,7 +2,7 @@
 @author:    Nigel Abrera
 @date:      March 03, 2024
 */
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import { DropdownProps } from './Dropdown.types';
 import { Text } from '../Text/Text';
@@ -61,11 +61,11 @@ const DropdownItem = styled.li`
 `;
 
 
-const Dropdown: React.FC<DropdownProps> = ({
+const Dropdown = ({
   disabled = false,
   open,
   size = 'normal',
-}) => {
+}: DropdownProps) => {
   const [isOpen, setIsOpen] = useState(open);
 
   const toggleDropdown = () => {
@@ -88,4 +88,4 @@ const Dropdown: React.FC<DropdownProps> = ({
   );
 };
 
-export default Dropdown;
+export { Dropdown };

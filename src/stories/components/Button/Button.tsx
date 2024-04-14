@@ -53,12 +53,12 @@ const StyledButton = styled.button<ButtonProps>`
           transform: translateY(1px);
         };
 `;
-export const Button: React.FC<ButtonProps> = ({
+export const Button = ({
   size = 'normal',
   backgroundColor,
   label,
   ...props
-}) => {
+}: ButtonProps) => {
   const [isClicked, setIsClicked] = useState(false);
   const handleClick = useCallback(() => {
     setIsClicked(true);
@@ -71,7 +71,7 @@ export const Button: React.FC<ButtonProps> = ({
       size={size}
       style={{ backgroundColor }}
       {...props}
-      data-testid="Button"
+      data-testid={"Button"}
       onClick={handleClick}>
       {label}
     </StyledButton>

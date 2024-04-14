@@ -29,10 +29,10 @@ const HeroComponent = styled.img<HeroProps>`
   `};
 `;
 
-export const Hero: React.FC<HeroProps> = ({src, alt, size = 'normal', disabled}) => {
+export const Hero = ({src, alt, size = 'normal', disabled}: HeroProps) => {
   return (
     <>
-      <HeroComponent disabled={disabled} src={src} alt={alt} size={size} data-testid="Hero"/>
+      <HeroComponent disabled={disabled} src={src} alt={alt} size={size} data-testid={"Hero"}/>
     </>
   );
 };

@@ -22,17 +22,17 @@ const RadioInput = styled.input.attrs({ type: 'radio' })<{ isDisabled: boolean }
   margin-right: 10px;
 `;
 
-const Radio: React.FC<RadioButtonProps> = ({
+const Radio = ({
   name,
   options,
   onChange,
   disabled = false,
   size = 'normal',
-}) => {
+}: RadioButtonProps) => {
   // State to track the selected option
   const [selectedValue, setSelectedValue] = useState<string>('');
 
-  const handleRadioChange = (option: RadioButtonOption, event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleRadioChange = (options: RadioButtonOption, event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedValue(event.target.value);
     if (onChange) {
       onChange(event.target.value);
@@ -45,6 +45,7 @@ const Radio: React.FC<RadioButtonProps> = ({
         return (
           <RadioLabel key={option.value} isDisabled={isOptionDisabled}>
             <RadioInput
+
               type="radio"
               name={name}
               value={option.value}
@@ -64,4 +65,4 @@ const Radio: React.FC<RadioButtonProps> = ({
   );
 };
 
-export default Radio;
+export { Radio };

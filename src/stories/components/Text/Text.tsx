@@ -30,17 +30,17 @@ const StyledText = styled.p<TextProps>`
 
 `;
 
-export const Text: React.FC<TextProps> = ({
+export const Text = ({
   size = 'normal',
   backgroundColor,
   error = false,
   children,
   primary = true,
   ...props
-}) => {
+}: TextProps) => {
   return (
     <StyledText
-                data-testid="Text"
+                data-testid={"Text"}
                 size={ size }
                 style={{ backgroundColor }}
                 primary={primary}

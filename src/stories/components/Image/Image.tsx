@@ -3,7 +3,6 @@
 @date:      March 04, 2024
 */
 
-import React from 'react';
 import styled, { css } from 'styled-components';
 import { ImageProps } from './Image.types';
 
@@ -29,10 +28,10 @@ const ImageComponent = styled.img<ImageProps>`
   `};
 `;
 
-export const Image: React.FC<ImageProps> = ({src, alt, size = 'normal', disabled}) => {
+export const Image = ({src, alt, size = 'normal', disabled} : ImageProps) => {
   return (
     <>
-      <ImageComponent disabled={disabled} src={src} alt={alt} size={size} data-testid="Image"/>
+      <ImageComponent disabled={disabled} src={src} alt={alt} size={size} data-testid={"Image"}/>
     </>
   );
 };

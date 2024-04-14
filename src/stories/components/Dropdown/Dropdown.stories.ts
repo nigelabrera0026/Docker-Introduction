@@ -4,7 +4,7 @@
 */
 import { userEvent, within } from "@storybook/test";
 import { Meta, StoryObj } from '@storybook/react';
-import Dropdown from './Dropdown';
+import { Dropdown} from './Dropdown';
 import { DropdownProps } from './Dropdown.types';
 
 const meta: Meta<DropdownProps> = {

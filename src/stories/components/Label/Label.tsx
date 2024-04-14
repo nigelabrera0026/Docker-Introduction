@@ -46,14 +46,14 @@ const Input = styled.input<LabelProps>`
 export const Label = ({
   label = "Email Address",
   variant = 'normal',
-  disabled = false, // Add default value for disabled
+  disabled = false,
   error = false,
   ...props
 }: LabelProps) => {
   return (
     <LabelContainer disabled={disabled} variant={variant}>
       <Text size={variant} error={error} disabled={disabled}>{label}</Text>
-      <Input disabled={disabled} variant={variant} error={error} {...props} data-testid="Label"/>
+      <Input disabled={disabled} variant={variant} error={error} {...props} data-testid={"Label"}/>
     </LabelContainer>
   );
 };

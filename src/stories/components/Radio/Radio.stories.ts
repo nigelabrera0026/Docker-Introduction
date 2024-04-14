@@ -4,16 +4,17 @@
 */
 import { userEvent, within } from "@storybook/test";
 import { Meta, StoryObj } from '@storybook/react';
-import RadioButton from '../../components/Radio/Radio';
+import { Radio } from './Radio';
+
 
 const meta: Meta = {
   title: 'Components/RadioButton',
-  component: RadioButton,
+  component: Radio,
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
   },
-} satisfies Meta<typeof RadioButton>;
+} satisfies Meta<typeof Radio>;
 
 export default meta;
 

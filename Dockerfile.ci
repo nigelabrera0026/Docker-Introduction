@@ -1,0 +1,14 @@
+# Using the official Node.js image as the base image
+FROM node:21-bullseye
+
+# Create and set the working directory
+WORKDIR /abrera_nigel_site
+
+COPY package*.json .
+
+RUN npm ci
+RUN npx playwright install --with-deps chromium
+
+COPY . .
+
+CMD ["npm", "run", "ci:test"]

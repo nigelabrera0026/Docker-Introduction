@@ -51,7 +51,7 @@ const TfootStyled = styled.tfoot<{ size: 'mobile' | 'normal' }>`
   }
 `;
 
-export const Table: React.FC<TableProps> = ({ columns, data, footer, size = 'normal', disabled }) => {
+export const Table = ({ columns, data, footer, size = 'normal', disabled }: TableProps) => {
   return (
     <TableStyled isDisabled={disabled} size={size} data-testid="Table">
       <thead>
