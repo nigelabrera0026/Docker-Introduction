@@ -14,7 +14,7 @@ const StyledButton = styled.button<ButtonProps>`
   border-radius: 3px;
 
   display: inline-block;
-  line-height: 1;
+  line-height: 1;//
   border: 0;
   color: white;
   background-color: #F1B080;
@@ -42,20 +42,21 @@ const StyledButton = styled.button<ButtonProps>`
 
         /* Pressed state */
         &:not(:disabled):active {
-          box-shadow: none;
-          transform: translateY(1px);
+          box-shadow: none;//
+          transform: translateY(1px);//
 
         };
 
         /* Hover state */
         &:not(:disabled):hover {
-          box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+          box-shadow: none;
+          transform: translateY(1px);
         };
 `;
 
 // Make jest test
 export function click(){
-  
+
 };
 
 export const Button: React.FC<ButtonProps> = ({
@@ -81,7 +82,7 @@ export const Button: React.FC<ButtonProps> = ({
       size={size}
       style={{ backgroundColor }}
       {...props}
-      data-testid={testId="Button"}
+      data-testid={testId}
       onClick={handleClick}>
       {label}
     </StyledButton>

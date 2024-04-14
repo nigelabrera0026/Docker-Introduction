@@ -189,5 +189,7 @@ export default {
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
 
-
-
+// Installers for testing.
+npm i --save-dev jest babel-jest @storybook/addon-jest @babel/core @babel/preset-env @babel/preset-typescript @babel/preset-react @types/jest ts-node identity-obj-proxy @testing-library/react @testing-library/jest-dom
+npm install @storybook/test-runner --save-dev
+npx install playwright

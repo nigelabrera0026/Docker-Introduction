@@ -9,7 +9,22 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "test:jest": "jest",
+    "test:storybook": "test-storybook",
+    "test": "npm run test:jest && n"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.(t|j)sx?$": "babel-jest"
+    },
+    "moduleNameMapper": {
+      ".(css|less|scss)$": "identity-obj-proxy"
+    },
+    "modulePathIgnorePatterns": [
+      "node_modules",
+      "jest-test-results.json"
+    ]
   },
   "dependencies": {
     "@mdx-js/loader": "^3.0.1",
@@ -24,6 +39,8 @@
     "@babel/preset-env": "^7.24.4",
     "@babel/preset-react": "^7.24.1",
     "@babel/preset-typescript": "^7.24.1",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@storybook/addon-essentials": "^7.6.17",
     "@storybook/addon-interactions": "^7.6.17",
     "@storybook/addon-jest": "^8.0.8",
@@ -31,9 +48,11 @@
     "@storybook/addon-onboarding": "^1.0.11",
     "@storybook/addon-themes": "^7.6.17",
     "@storybook/blocks": "^7.6.17",
+    "@storybook/icons": "^1.2.9",
     "@storybook/react": "^7.6.17",
     "@storybook/react-vite": "^7.6.17",
     "@storybook/test": "^7.6.17",
+    "@storybook/test-runner": "^0.17.0",
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^15.0.2",
     "@types/jest": "^29.5.12",
