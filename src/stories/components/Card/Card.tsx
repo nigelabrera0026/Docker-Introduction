@@ -89,7 +89,7 @@ export const Card = ({
       </StyledImageContainer>
       <StyledTextTitle size={size}>{title}</StyledTextTitle>
       <StyledTextBody size={size}>{content}</StyledTextBody>
-      <StyledButton size={size} label={linker} disabled={disabled} />
+      <StyledButton size={size} label={linker} disabled={disabled} data-testid="Button"/>
     </StyledCard>
   );
 };

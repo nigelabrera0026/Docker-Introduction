@@ -2,6 +2,8 @@
 @author:    Nigel Abrera
 @date:      March 02, 2024
 */
+
+import { expect, within } from "@storybook/test";
 import type { Meta, StoryObj } from '@storybook/react';
 import { Image } from '../../components/Image/Image';
 
@@ -24,6 +26,10 @@ export const Normal: Story = {
     src: 'image_component.jpg',
     alt: 'Painting',
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    expect(canvas.getByTestId("Image")).toBeInTheDocument();
+  },
 };
 
 export const NormalDisabled: Story = {
@@ -32,6 +38,10 @@ export const NormalDisabled: Story = {
     src: 'image_component.jpg',
     alt: 'Painting',
     disabled: true,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    expect(canvas.getByTestId("Image")).toBeInTheDocument();
   },
 };
 
@@ -42,6 +52,10 @@ export const Mobile: Story = {
     alt: 'Painting',
     disabled: false,
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    expect(canvas.getByTestId("Image")).toBeInTheDocument();
+  },
 };
 
 export const MobileDisabled: Story = {
@@ -50,6 +64,10 @@ export const MobileDisabled: Story = {
     src: 'image_component.jpg',
     alt: 'Painting',
     disabled: true,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    expect(canvas.getByTestId("Image")).toBeInTheDocument();
   },
 };
 

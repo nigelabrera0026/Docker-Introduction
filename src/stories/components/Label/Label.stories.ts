@@ -2,7 +2,7 @@
 @author:    Nigel Abrera
 @date:      March 04, 2024
 */
-
+import { userEvent, expect, within } from "@storybook/test";
 import type { Meta, StoryObj } from '@storybook/react';
 import { Label } from '../../components/Label/Label';
 
@@ -24,12 +24,20 @@ export const Default: Story = {
     label: 'Email address',
     variant: 'normal',
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await userEvent.click(canvas.getByTestId('Label'));
+  },
 };
 
 export const Disabled: Story = {
   args: {
     label: "Email address",
     disabled: true,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    expect(canvas.getByTestId("Label")).toBeInTheDocument();
   },
 };
 
@@ -38,12 +46,20 @@ export const Error: Story = {
     label: "Email address",
     error: true,
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await userEvent.click(canvas.getByTestId('Label'));
+  },
 };
 
 export const Mobile: Story = {
   args: {
     label: "Email address",
     variant: 'mobile',
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await userEvent.click(canvas.getByTestId('Label'));
   },
 };
 
@@ -53,6 +69,10 @@ export const MobileDisabled: Story = {
     variant: 'mobile',
     disabled: true,
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    expect(canvas.getByTestId("Label")).toBeInTheDocument();
+  },
 };
 
 export const MobileError: Story = {
@@ -60,5 +80,9 @@ export const MobileError: Story = {
     label: "Email address",
     variant: 'mobile',
     error: true,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await userEvent.click(canvas.getByTestId('Label'));
   },
 };

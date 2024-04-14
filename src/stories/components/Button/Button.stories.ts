@@ -25,6 +25,7 @@ export const Normal: Story = {
   args: {
     size: 'normal',
     label: 'Button',
+
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);

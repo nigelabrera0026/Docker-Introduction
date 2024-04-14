@@ -32,7 +32,7 @@ const ImageComponent = styled.img<ImageProps>`
 export const Image: React.FC<ImageProps> = ({src, alt, size = 'normal', disabled}) => {
   return (
     <>
-      <ImageComponent disabled={disabled} src={src} alt={alt} size={size}/>
+      <ImageComponent disabled={disabled} src={src} alt={alt} size={size} data-testid="Image"/>
     </>
   );
 };

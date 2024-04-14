@@ -8,7 +8,6 @@ interface ButtonProps {
   label?: string;
   disabled?: boolean;
   onClick?: () => void;
-  'data-testid'?: string;
 }
 
 export type { ButtonProps };

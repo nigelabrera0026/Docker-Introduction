@@ -52,6 +52,7 @@ const Radio: React.FC<RadioButtonProps> = ({
               disabled={isOptionDisabled}
               onChange={(event) => handleRadioChange(option, event)}
               isDisabled={isOptionDisabled}
+              data-testid={option.value}
             />
             <Text size={size} disabled={isOptionDisabled}>
               {option.label}

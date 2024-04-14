@@ -2,7 +2,7 @@
 @author:    Nigel Abrera
 @date:      March 09, 2024
 */
-
+import { userEvent, within } from "@storybook/test";
 import { Meta, StoryObj } from '@storybook/react';
 import RadioButton from '../../components/Radio/Radio';
 
@@ -28,6 +28,12 @@ export const Default: Story = {
     ],
     onChange: (value: string) => console.log(value),
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await userEvent.click(canvas.getByTestId('option1'));
+    await userEvent.click(canvas.getByTestId('option2'));
+    await userEvent.click(canvas.getByTestId('option3'));
+  },
 };
 
 
@@ -40,6 +46,12 @@ export const Disabled: Story = {
     ],
     onChange: (value: string) => console.log(value),
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await userEvent.click(canvas.getByTestId('option1'));
+    await userEvent.click(canvas.getByTestId('option2'));
+    await userEvent.click(canvas.getByTestId('option3'));
+  },
 };
 
 export const SelectiveDisabled: Story = {
@@ -50,6 +62,12 @@ export const SelectiveDisabled: Story = {
       { label: 'Option 3', value: 'option3'},
     ],
     onChange: (value: string) => console.log(value),
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await userEvent.click(canvas.getByTestId('option1'));
+    await userEvent.click(canvas.getByTestId('option2'));
+    await userEvent.click(canvas.getByTestId('option3'));
   },
 };
 
@@ -62,6 +80,12 @@ export const Mobile: Story = {
     ],
     onChange: (value: string) => console.log(value),
     size: 'mobile',
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await userEvent.click(canvas.getByTestId('option1'));
+    await userEvent.click(canvas.getByTestId('option2'));
+    await userEvent.click(canvas.getByTestId('option3'));
   },
 };
 
@@ -76,6 +100,12 @@ export const MobileDisabled: Story = {
     size: 'mobile',
     disabled: true,
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await userEvent.click(canvas.getByTestId('option1'));
+    await userEvent.click(canvas.getByTestId('option2'));
+    await userEvent.click(canvas.getByTestId('option3'));
+  },
 };
 
 export const MobileSelectiveDisabled: Story = {
@@ -87,6 +117,12 @@ export const MobileSelectiveDisabled: Story = {
     ],
     onChange: (value: string) => console.log(value),
     size: 'mobile',
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await userEvent.click(canvas.getByTestId('option1'));
+    await userEvent.click(canvas.getByTestId('option2'));
+    await userEvent.click(canvas.getByTestId('option3'));
   },
 };
 

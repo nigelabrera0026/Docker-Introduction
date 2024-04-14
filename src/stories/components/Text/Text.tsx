@@ -40,6 +40,7 @@ export const Text: React.FC<TextProps> = ({
 }) => {
   return (
     <StyledText
+                data-testid="Text"
                 size={ size }
                 style={{ backgroundColor }}
                 primary={primary}

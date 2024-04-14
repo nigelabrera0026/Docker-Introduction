@@ -53,26 +53,15 @@ const StyledButton = styled.button<ButtonProps>`
           transform: translateY(1px);
         };
 `;
-
-// Make jest test
-export function click(){
-
-};
-
 export const Button: React.FC<ButtonProps> = ({
   size = 'normal',
   backgroundColor,
   label,
-  'data-testid': testId,
   ...props
 }) => {
   const [isClicked, setIsClicked] = useState(false);
-
   const handleClick = useCallback(() => {
-    // This function will be called when the button is clicked
     setIsClicked(true);
-
-    // If there are any additional onClick actions, call them here
     if (props.onClick) {
       props.onClick();
     }
@@ -82,7 +71,7 @@ export const Button: React.FC<ButtonProps> = ({
       size={size}
       style={{ backgroundColor }}
       {...props}
-      data-testid={testId}
+      data-testid="Button"
       onClick={handleClick}>
       {label}
     </StyledButton>

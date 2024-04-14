@@ -12,7 +12,7 @@
     "build-storybook": "storybook build",
     "test:jest": "jest",
     "test:storybook": "test-storybook",
-    "test": "npm run test:jest && n"
+    "test": "npm run test:jest && sleep 30 && npm run test:storybook"
   },
   "jest": {
     "transform": {

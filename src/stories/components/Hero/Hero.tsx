@@ -32,7 +32,7 @@ const HeroComponent = styled.img<HeroProps>`
 export const Hero: React.FC<HeroProps> = ({src, alt, size = 'normal', disabled}) => {
   return (
     <>
-      <HeroComponent disabled={disabled} src={src} alt={alt} size={size}/>
+      <HeroComponent disabled={disabled} src={src} alt={alt} size={size} data-testid="Hero"/>
     </>
   );
 };

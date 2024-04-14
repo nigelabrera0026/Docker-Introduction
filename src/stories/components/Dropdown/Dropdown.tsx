@@ -76,7 +76,7 @@ const Dropdown: React.FC<DropdownProps> = ({
 
   return (
     <DropdownContainer size={size}>
-      <DropdownButton disabled={disabled} onClick={toggleDropdown} size={size}>
+      <DropdownButton disabled={disabled} onClick={toggleDropdown} size={size} data-testid="dropdown">
         <Text size={size} primary={false}>Options</Text>
       </DropdownButton>
       <DropdownContent open={isOpen} size={size}>

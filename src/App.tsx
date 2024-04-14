@@ -55,9 +55,23 @@ Hero Image Done
 Text DONE
 Dropdown Done
 
-
-
 2) implement Storybook test and jest test
+Sb Testing - x
+jest test - /
+
+Button (x)
+Label - (x)(/)
+Radio button (x)
+Table (x)
+	Table header
+	Table row
+	Table cell
+	Table footer
+Img (x)
+Card (x)
+Hero Image (x)
+Text (x)
+Dropdown (x)
 
 3) do the github actions
 

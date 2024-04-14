@@ -2,6 +2,7 @@
 @author:    Nigel Abrera
 @date:      March 03, 2024
 */
+import { expect, within } from "@storybook/test";
 import { Meta, StoryObj } from '@storybook/react';
 import { Text } from '../../components/Text/Text';
 
@@ -35,6 +36,10 @@ export const Primary: Story = {
     size: 'medium',
     variant: 'normal',
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    expect(canvas.getByTestId("Text")).toBeInTheDocument();
+  },
 };
 
 export const Secondary: Story = {
@@ -45,6 +50,10 @@ export const Secondary: Story = {
     variant: 'normal',
     backgroundColor: "#F1B080",
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    expect(canvas.getByTestId("Text")).toBeInTheDocument();
+  },
 };
 
 export const Mobile: Story = {
@@ -53,6 +62,10 @@ export const Mobile: Story = {
     children: "The quick brown fox jumps over the lazy dog",
     size: 'mobile'
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    expect(canvas.getByTestId("Text")).toBeInTheDocument();
+  },
 };
 
 export const Normal: Story = {
@@ -60,6 +73,10 @@ export const Normal: Story = {
     primary: true,
     children: "The quick brown fox jumps over the lazy dog",
     size: 'normal',
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    expect(canvas.getByTestId("Text")).toBeInTheDocument();
   },
 };
 
@@ -70,6 +87,10 @@ export const Disabled: Story = {
     disabled: true,
     size: 'medium',
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    expect(canvas.getByTestId("Text")).toBeInTheDocument();
+  },
 };
 
 export const Error: Story = {
@@ -78,5 +99,9 @@ export const Error: Story = {
     children: "The quick brown fox jumps over the lazy dog",
     size: 'medium',
     error: true,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    expect(canvas.getByTestId("Text")).toBeInTheDocument();
   },
 };

@@ -3,7 +3,7 @@
 @date:      March 02, 2024
 */
 
-
+import { userEvent, within } from "@storybook/test";
 import type { Meta, StoryObj } from '@storybook/react';
 import { Card } from './Card';
 
@@ -31,6 +31,10 @@ export const Normal: Story = {
     },
     size: 'normal',
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await userEvent.click(canvas.getByTestId('Button'));
+  },
 };
 
 export const Disabled: Story = {
@@ -41,7 +45,11 @@ export const Disabled: Story = {
       size: 'mobile',
     },
     disabled: true,
-  }
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await userEvent.click(canvas.getByTestId('Button'));
+  },
 }
 
 export const Mobile: Story = {
@@ -54,6 +62,10 @@ export const Mobile: Story = {
     },
     size: 'mobile',
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await userEvent.click(canvas.getByTestId('Button'));
+  },
 };
 
 export const MobileDisabled: Story = {
@@ -65,6 +77,10 @@ export const MobileDisabled: Story = {
     },
     disabled: true,
     size: 'mobile',
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await userEvent.click(canvas.getByTestId('Button'));
   },
 };
 

@@ -5,6 +5,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import Table from '../../components/Table/Table';
 import { TableProps } from '../../components/Table/Table.types'; // Import the TableProps
+import { expect, within } from "@storybook/test";
 
 const meta: Meta<TableProps> = {
   title: 'Components/Table',
@@ -34,6 +35,10 @@ export const Default: Story = {
     ],
     footer: "This is a Footer",
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    expect(canvas.getByTestId("Table")).toBeInTheDocument();
+  },
 };
 
 
@@ -42,12 +47,20 @@ export const Disabled: Story = {
     ...Default.args,
     disabled: true,
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    expect(canvas.getByTestId("Table")).toBeInTheDocument();
+  },
 };
 
 export const Mobile: Story = {
   args: {
     ...Default.args,
     size: 'mobile',
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    expect(canvas.getByTestId("Table")).toBeInTheDocument();
   },
 };
 
@@ -57,6 +70,10 @@ export const DisabledMobile: Story = {
     ...Default.args,
     disabled: true,
     size: 'mobile',
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    expect(canvas.getByTestId("Table")).toBeInTheDocument();
   },
 };
 

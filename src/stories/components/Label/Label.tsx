@@ -53,7 +53,7 @@ export const Label = ({
   return (
     <LabelContainer disabled={disabled} variant={variant}>
       <Text size={variant} error={error} disabled={disabled}>{label}</Text>
-      <Input disabled={disabled} variant={variant} error={error} {...props} />
+      <Input disabled={disabled} variant={variant} error={error} {...props} data-testid="Label"/>
     </LabelContainer>
   );
 };
