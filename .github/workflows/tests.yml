@@ -1,18 +1,20 @@
-name: tests
+name: Run tests
 on:
   push
+
 jobs:
-  container-test-job:
+  test:
+    name: Run test suite
     runs-on: ubuntu-latest
-    container:
-      image: node-18
-      env:
-        NODE_ENV: development
-      ports:
-        - 80
-      volumes:
-        - my_docker_volume:/volume_mount
-      options: --cpus 1
+    env:
+      COMPOSE_FILE: ../../Dockerfile.ci
+
     steps:
-      - name: Check for dockerenv file
-        run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Build docker images
+      run: docker build -t main -f $COMPOSE_FILE .
+
+    - name: Run tests
+      run: docker run main

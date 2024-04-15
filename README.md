@@ -133,7 +133,6 @@ You can only delete a container if it's not running.
 sudo docker rm container_id
 ```
 
-
 - To delete a docker image.
 Replace (image_id) with the actual id of your image (each one is unique).
 You can only delete an image if the image is not being used by a container.
