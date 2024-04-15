@@ -2,33 +2,25 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { Button, ButtonProps } from './stories/components';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+
+  const handleButtonClick = () => {
+    console.log('button was clicked');
+  };
+
+  const buttonProps: ButtonProps = {
+    size: 'normal',
+    label: 'ButtonTest',
+    disabled: false,
+    onClick: handleButtonClick,
+  };
 
   return (
     <>
-      <div>
-        <h1>Codin 1</h1>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <div></div>
     </>
   )
 }
@@ -57,9 +49,10 @@ Dropdown Done
 
 2) implement Storybook test and jest test
 Sb Testing - x
+jest testing - /
 
 Button (x)
-Label - (x)
+Label - (x) (/)
 Radio button (x)
 Table (x)
 	Table header
@@ -72,7 +65,14 @@ Hero Image (x)
 Text (x)
 Dropdown (x)
 
-3) do the github actions
+3) do the github actions and vercel DONE
 
-4) Build shit.
+4) Build portfolio
+
+npm run cd to build and deploy straight to prod >:)
+check tailwindcss
+
+
+
+
 */

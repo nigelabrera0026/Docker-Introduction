@@ -1,9 +1,9 @@
-export {Button} from './Button';
-export { Hero } from './Hero';
-export { Image } from './Image';
-export { Radio } from './Radio';
-export { Text } from './Text';
-export { Table } from './Table';
-export { Label } from './Label';
-export { Card } from './Card';
-export { Dropdown } from './Dropdown';
+export * from './Button';
+export * from './Hero';
+export * from './Image';
+export * from './Radio';
+export * from './Text';
+export * from './Table';
+export * from './Label';
+export * from './Card';
+export * from './Dropdown';
