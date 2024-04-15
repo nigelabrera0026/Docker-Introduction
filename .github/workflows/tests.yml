@@ -17,4 +17,4 @@ jobs:
       run: docker build -t main -f $COMPOSE_FILE .
 
     - name: Run tests
-      run: docker run main
+      run: docker run master
