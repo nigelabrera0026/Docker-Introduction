@@ -192,3 +192,26 @@ export default {
 npm i --save-dev jest babel-jest @storybook/addon-jest @babel/core @babel/preset-env @babel/preset-typescript @babel/preset-react @types/jest ts-node identity-obj-proxy @testing-library/react @testing-library/jest-dom
 npm install @storybook/test-runner --save-dev
 npx install playwright
+
+for CI/CD
+npm install --save-dev concurrently
+
+export default defineConfig(() => {
+  if (process.env.BUILD_TYPE === 'storybook') {
+    return {
+      plugins: [react(),  reactRefresh()],
+      base: "/storybook",
+      esbuild: {
+        jsxFactory: "React.createElement",
+        jsxFragment: "React.Fragment",
+      }
+    }
+  } else {
+    return {
+      plugins: [react(),  reactRefresh()],
+      esbuild: {
+        jsxFactory: "React.createElement",
+        jsxFragment: "React.Fragment",
+      }
+    }
+  })
