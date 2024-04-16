@@ -7,6 +7,7 @@ interface LabelProps {
   variant: 'mobile' | 'normal';
   disabled?: boolean;
   error?: boolean;
+  backgroundColor?: string;
 };
 
 export type { LabelProps };

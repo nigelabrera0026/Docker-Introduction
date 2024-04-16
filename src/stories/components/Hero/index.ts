@@ -1,2 +1,2 @@
-export { Hero } from './Hero';
-export type { HeroProps } from './Hero.types';
+export * from './Hero';
+export type * from './Hero.types';

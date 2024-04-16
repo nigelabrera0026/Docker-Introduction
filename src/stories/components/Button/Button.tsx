@@ -14,7 +14,7 @@ const StyledButton = styled.button<ButtonProps>`
   border-radius: 3px;
 
   display: inline-block;
-  line-height: 1;//
+  line-height: 1;
   border: 0;
   color: white;
   background-color: #F1B080;

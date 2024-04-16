@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import { Button, ButtonProps } from './stories/components';
 
@@ -27,52 +25,18 @@ function App() {
 
 export default App
 /*
-? COMPONENTS UI
+TODO:
+    Table Create Subcomponents
+    Configure the wireframe doc to be equal to the stories itself
 
-sizes : mobile | normal
+? Done:
+    Dropdown backgroundColor
+    Label backgroundColor
 
-1) Finish designing componens
+Coding 13
 
-Button Done
-Label Done
-Radio button Done
-Table Done
-	Table header
-	Table row
-	Table cell
-	Table footer
-Img DONE
-Card DONE
-Hero Image Done
-Text DONE
-Dropdown Done
-
-2) implement Storybook test and jest test
-Sb Testing - x
-jest testing - /
-
-Button (x)
-Label - (x) (/)
-Radio button (x)
-Table (x)
-	Table header
-	Table row
-	Table cell
-	Table footer
-Img (x)
-Card (x)
-Hero Image (x)
-Text (x)
-Dropdown (x)
-
-3) do the github actions and vercel DONE
-
-4) Build portfolio
-
-npm run cd to build and deploy straight to prod >:)
-check tailwindcss
-
-
-
+Matching Part 1
+CI, and matching
+Live run push
 
 */

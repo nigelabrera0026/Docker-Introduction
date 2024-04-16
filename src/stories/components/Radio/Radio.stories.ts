@@ -14,6 +14,9 @@ const meta: Meta = {
   parameters: {
     layout: 'centered',
   },
+  argTypes: {
+    backgroundColor: { control: 'color'},
+  },
 } satisfies Meta<typeof Radio>;
 
 export default meta;
@@ -28,6 +31,7 @@ export const Default: Story = {
       { label: 'Option 3', value: 'option3'},
     ],
     onChange: (value: string) => console.log(value),
+
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);

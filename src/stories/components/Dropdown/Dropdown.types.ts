@@ -4,7 +4,6 @@
 */
 
 interface DropdownProps {
-  primary?: boolean;
   label?: string;
   items?: string[];
   error?: boolean;

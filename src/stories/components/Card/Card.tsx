@@ -80,10 +80,11 @@ export const Card = ({
   content = "Lorem ipsum somthing, this needs to have a truncation at length x",
   linker = "Learn More",
   size = 'normal',
-  disabled = false
+  disabled = false,
+  backgroundColor,
 }: CardProps) => {
   return (
-    <StyledCard size={size}>
+    <StyledCard size={size} style={{backgroundColor}}>
       <StyledImageContainer size={size}>
         <StyledImage src={image.src} alt={image.alt} size={size} disabled={image.disabled} />
       </StyledImageContainer>

@@ -13,6 +13,9 @@ const meta: Meta = {
     layout: 'centered',
   },
   tags: ['autodocs'],
+  argTypes: {
+    backgroundColor: { control: 'color'},
+  },
 } satisfies Meta<typeof Label>;
 
 export default meta;

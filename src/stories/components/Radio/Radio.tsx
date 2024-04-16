@@ -27,9 +27,10 @@ const Radio = ({
   options,
   onChange,
   disabled = false,
+  backgroundColor,
   size = 'normal',
 }: RadioButtonProps) => {
-  // State to track the selected option
+
   const [selectedValue, setSelectedValue] = useState<string>('');
 
   const handleRadioChange = (options: RadioButtonOption, event: React.ChangeEvent<HTMLInputElement>) => {
@@ -39,13 +40,12 @@ const Radio = ({
     }
   };
   return (
-    <RadioWrapper>
+    <RadioWrapper style={{backgroundColor}}>
       {options.map((option: RadioButtonOption) => {
         const isOptionDisabled = option.disabled !== undefined ? option.disabled : disabled;
         return (
-          <RadioLabel key={option.value} isDisabled={isOptionDisabled}>
+          <RadioLabel key={option.value} isDisabled={isOptionDisabled} >
             <RadioInput
-
               type="radio"
               name={name}
               value={option.value}
