@@ -1,31 +1,67 @@
 import { Meta, StoryObj } from "@storybook/react";
-import {TableFooter} from "./TableFooter";
-
+import { TableFooter } from "./TableFooter";
+import { expect, within } from "@storybook/test";
 const meta: Meta = {
   title: "Components/TableFooter",
   component: TableFooter,
-  tags: ["autodocs"],
+  tags:['autodocs'],
   argTypes: {
-    backgroundColor: { control: "color" },
+    backgroundColor:{ controls: "color"},
+    size: {
+      control: {
+        type: 'select',
+        options: ['mobile', 'normal'],
+      }
+    }
   },
-  parameters: {
-    layout: "centered",
-  },
-} satisfies Meta<typeof TableFooter>;
+};
 
 export default meta;
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof TableFooter>;
 
-export const Default: Story = {
+export const Normal: Story = {
   args: {
-    disabled: false,
-    content: "Footer content",
+    footers: ['Footer 1'],
+    size: 'normal',
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    expect(canvas.getByTestId("TableFooter")).toBeInTheDocument();
   },
 };
+
 export const Disabled: Story = {
   args: {
+    footers: ['Footer 1'],
+    size: 'normal',
     disabled: true,
-    content: "Footer content",
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    expect(canvas.getByTestId("TableFooter")).toBeInTheDocument();
+  },
+};
+
+export const Mobile: Story = {
+  args: {
+    footers: ['Footer 1'],
+    size: 'mobile',
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    expect(canvas.getByTestId("TableFooter")).toBeInTheDocument();
+  },
+};
+
+export const MobileDisabled: Story = {
+  args: {
+    footers: ['Footer 1'],
+    size: 'normal',
+    disabled: true,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    expect(canvas.getByTestId("TableFooter")).toBeInTheDocument();
   },
 };

@@ -1,16 +1,11 @@
-import {Text} from '../Text';
-import styled from "styled-components";
-import { TableFooterProps } from "./TableFooter.types";
 
-const StyledTableFooter = styled.tfoot`
-  background-color: blue;
-  color: white;
-`;
+import { TableFooterProps } from './TableFooter.types';
+import { TableRow } from '../TableRow/TableRow';
 
-export const TableFooter = ({ children, backgroundColor }: TableFooterProps) => {
+export const TableFooter = ({ footers, size, disabled=false, backgroundColor }: TableFooterProps) => {
   return (
-    <StyledTableFooter style={{backgroundColor}}>
-      <Text primary={false}>{children}</Text>
-    </StyledTableFooter>
+    <tfoot style={{backgroundColor}} data-testid="TableFooter">
+      <TableRow cells={footers} size={size} disabled={disabled} />
+    </tfoot>
   );
 };

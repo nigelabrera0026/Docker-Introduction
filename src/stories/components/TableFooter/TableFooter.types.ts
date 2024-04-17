@@ -1,5 +1,8 @@
+import { TableRowProps } from '../TableRow/TableRow.types';
+
 export interface TableFooterProps {
-  content?: string;
-  children: React.ReactNode;
+  footers: React.ReactNode[];
+  size: TableRowProps['size'];
+  disabled: TableRowProps['disabled'];
   backgroundColor?: string;
 }

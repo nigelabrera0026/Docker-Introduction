@@ -18,7 +18,7 @@ const meta: Meta<DropdownProps> = {
 
 export default meta;
 
-export const Default: StoryObj<DropdownProps> = {
+export const Normal: StoryObj<DropdownProps> = {
   args: {
     size: 'normal'
   },

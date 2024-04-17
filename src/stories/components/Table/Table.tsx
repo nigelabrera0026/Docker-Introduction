@@ -1,34 +1,18 @@
-import React from 'react';
-import styled from 'styled-components';
 import { TableProps } from './Table.types';
-import { TableRow } from '../TableRow';
-import { TableCell } from '../TableCell';
-import { TableHeader } from '../TableHeader';
-import { TableFooter } from '../TableFooter';
+import { TableHeader } from '../TableHeader/TableHeader';
+import { TableRow } from '../TableRow/TableRow';
+import { TableFooter } from '../TableFooter/TableFooter';
 
-// Styled components for the table
-const StyledTable = styled.table`
-  width: 100%;
-  border-collapse: collapse;
-`;
-
-// Table Component
-export const Table: React.FC<TableProps> = ({ columns, data }) => {
+export const Table = ({ header, rows, footer, size, backgroundColor, disabled=false }: TableProps) => {
   return (
-    <StyledTable>
-      <thead>
-        <tr>
-          {columns.map((column) => (
-            <TableHeader key={column.key} title={column.title} />
-          ))}
-        </tr>
-      </thead>
+    <table style={{backgroundColor}} data-testid="Table">
+      <TableHeader headers={header} size={size} disabled={disabled} />
       <tbody>
-        {data.map((rowData, rowIndex) => (
-          <TableRow key={rowIndex} data={rowData} />
+        {rows.map((row, index) => (
+          <TableRow key={index} cells={row} size={size} disabled={disabled}/>
         ))}
       </tbody>
-      <TableFooter>Footer Content Here</TableFooter>
-    </StyledTable>
+      {footer && <TableFooter footers={footer} size={size} disabled={disabled}/>}
+    </table>
   );
 };

@@ -2,14 +2,13 @@
 @author:    Nigel Abrera
 @date:      March 05, 2024
 */
-export interface Column {
-  key: string;
-  title: string;
-}
+import { TableCellProps } from '../TableCell/TableCell.types';
 
 export interface TableProps {
-  columns: Column[];
-  data: string[][];
+  header: React.ReactNode[];
+  rows: React.ReactNode[][];
+  footer?: React.ReactNode[];
+  size: TableCellProps['size'];
+  disabled: TableCellProps['disabled'];
   backgroundColor?: string;
-  disabled: boolean;
 }

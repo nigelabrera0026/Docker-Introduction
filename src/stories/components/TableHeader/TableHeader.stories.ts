@@ -28,7 +28,7 @@ export const Normal: Story = {
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    expect(canvas.getByTestId("TableRow")).toBeInTheDocument();
+    expect(canvas.getByTestId("TableHeader")).toBeInTheDocument();
   },
 };
 
@@ -40,7 +40,7 @@ export const Disabled: Story = {
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    expect(canvas.getByTestId("TableRow")).toBeInTheDocument();
+    expect(canvas.getByTestId("TableHeader")).toBeInTheDocument();
   },
 };
 
@@ -51,7 +51,7 @@ export const Mobile: Story = {
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    expect(canvas.getByTestId("TableRow")).toBeInTheDocument();
+    expect(canvas.getByTestId("TableHeader")).toBeInTheDocument();
   },
 };
 
@@ -63,6 +63,6 @@ export const MobileDisabled: Story = {
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    expect(canvas.getByTestId("TableRow")).toBeInTheDocument();
+    expect(canvas.getByTestId("TableHeader")).toBeInTheDocument();
   },
 };
