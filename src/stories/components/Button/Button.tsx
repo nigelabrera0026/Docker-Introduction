@@ -2,7 +2,7 @@
 @author:    Nigel Abrera
 @date:      March 02, 2024
 */
-import React, { useState, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import styled, { css } from 'styled-components';
 import { ButtonProps } from './Button.types';
 
