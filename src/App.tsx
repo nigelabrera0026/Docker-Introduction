@@ -26,18 +26,7 @@ function App() {
 export default App
 /*
 TODO:
-    Table Row
-    Table Header
-    Table Footer
-    Table
-? Done:
-    Dropdown backgroundColor
-    Label backgroundColor
-
-    Table Cell Done
-
-
-
+   Create the APP.tsx even if it is simple.
 Coding 13
 
 Matching Part 1

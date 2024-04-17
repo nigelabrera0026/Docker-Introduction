@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Building the Next.js app
-RUN npm run build
+RUN npm run cd
 
 # Expose the port the app will run on
 EXPOSE 8083
