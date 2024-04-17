@@ -5,4 +5,5 @@ export interface TableCellProps {
   backgroundColor?: string;
   colSpan?: number;
   size: 'mobile' | 'normal';
+  disabled: boolean;
 }

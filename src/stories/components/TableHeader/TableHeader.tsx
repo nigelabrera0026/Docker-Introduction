@@ -1,19 +1,10 @@
-import styled from "styled-components";
-import { TableHeaderProps } from "./TableHeader.types";
-import { Text } from '../Text';
+import { TableHeaderProps } from './TableHeader.types';
+import { TableRow } from '../TableRow/TableRow';
 
-
-const StyledTableHeader = styled.th`
-  padding: 8px;
-  text-align: left;
-  background-color: blue;
-  color: white;
-  border-bottom: 1px solid gray;
-`;
-
-export const TableHeader = ({ title, backgroundColor }: TableHeaderProps) => {
+export const TableHeader= ({ headers, size, disabled=false, backgroundColor }: TableHeaderProps) => {
   return (
-    <StyledTableHeader style={{ backgroundColor }}>
-      <Text primary={true}>{title}</Text>
-    </StyledTableHeader>
-  )};
+    <thead style={{backgroundColor}}>
+      <TableRow cells={headers} size={size} disabled={disabled}/>
+    </thead>
+  );
+};

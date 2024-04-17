@@ -1,20 +1,14 @@
-
-import styled from 'styled-components';
 import { TableRowProps } from './TableRow.types';
-import { TableCell } from '../TableCell';
+import { TableCell } from '../TableCell/TableCell';
 
-const StyledTableRow = styled.tr`
-  &:nth-child(even) {
-    background-color: lightgray;
-  }
-`;
-
-export const TableRow: React.FC<TableRowProps> = ({ data }) => {
+export const TableRow = ({ cells, size, disabled, backgroundColor }: TableRowProps) => {
   return (
-    <StyledTableRow>
-      {data.map((cellContent, index) => (
-        <TableCell key={index} content={cellContent} />
+    <tr style={{backgroundColor}} data-testid='TableRow'>
+      {cells.map((cellContent, index) => (
+        <TableCell key={index} size={size} disabled={disabled}>
+          {cellContent}
+        </TableCell>
       ))}
-    </StyledTableRow>
+    </tr>
   );
 };

@@ -38,7 +38,7 @@ export const Normal: Story = {
 export const Disabled: Story = {
   args: {
     disabled: true,
-    content: "Cell content",
+    children: "Cell content",
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);

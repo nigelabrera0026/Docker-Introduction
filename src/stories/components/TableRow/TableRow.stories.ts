@@ -1,31 +1,72 @@
 import { Meta, StoryObj } from "@storybook/react";
-import {TableRow} from "./TableRow";
+import { TableRow } from "./TableRow";
+import { expect, within } from "@storybook/test";
 
 const meta: Meta = {
   title: "Components/TableRow",
   component: TableRow,
-  tags: ["autodocs"],
+  tags:['autodocs'],
   argTypes: {
-    backgroundColor: { control: "color" },
+    backgroundColor: { control: "color"},
+    size: {
+      control: {
+        type: 'select',
+        options: ['mobile', 'normal'],
+      }
+    }
   },
-  parameters: {
-    layout: "centered",
-  },
-} satisfies Meta<typeof TableRow>;
+};
 
 export default meta;
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof TableRow>;
 
-export const Default: Story = {
+export const Normal: Story = {
   args: {
+    cells: ['Cell 1', 'Cell 2', 'Cell 3'],
+    size: 'normal',
     disabled: false,
-    content: "Row content",
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    expect(canvas.getByTestId("TableRow")).toBeInTheDocument();
   },
 };
+
 export const Disabled: Story = {
   args: {
+    cells: ['Cell 1', 'Cell 2', 'Cell 3'],
+    size: 'normal',
     disabled: true,
-    content: "Row content",
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    expect(canvas.getByTestId("TableRow")).toBeInTheDocument();
   },
 };
+
+
+export const Mobile: Story = {
+  args: {
+    cells: ['Cell 1', 'Cell 2', 'Cell 3'],
+    size: 'mobile',
+    disabled: false,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    expect(canvas.getByTestId("TableRow")).toBeInTheDocument();
+  },
+};
+
+export const MobileDisabled: Story = {
+  args: {
+    cells: ['Cell 1', 'Cell 2', 'Cell 3'],
+    size: 'mobile',
+    disabled: true,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    expect(canvas.getByTestId("TableRow")).toBeInTheDocument();
+  },
+};
+
