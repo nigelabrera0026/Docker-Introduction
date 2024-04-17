@@ -9,6 +9,7 @@ interface HeroProps {
   backgroundColor?: string;
   size: 'mobile' | 'normal';
   disabled?: boolean;
+
 };
 
 export type { HeroProps };

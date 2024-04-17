@@ -10,6 +10,9 @@ import { Image } from '../../components/Image/Image';
 const meta: Meta = {
   title: 'Components/Image',
   component: Image,
+  argTypes: {
+    backgroundColor: {controls: "color"}
+  },
   parameters: {
     layout: 'centered',
   },

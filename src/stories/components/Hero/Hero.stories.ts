@@ -5,6 +5,9 @@ import { expect, within } from "@storybook/test";
 const meta: Meta = {
   title: 'Components/Hero',
   component: Hero,
+  argTypes: {
+    backgroundColor: {controls: "color"},
+  },
   parameters: {
     layout: 'centered',
   },

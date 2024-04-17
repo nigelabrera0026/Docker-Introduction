@@ -3,7 +3,6 @@
 @date:      March 05, 2024
 */
 
-import React from 'react';
 import styled, { css } from 'styled-components';
 import { HeroProps } from './Hero.types';
 
@@ -29,10 +28,10 @@ const HeroComponent = styled.img<HeroProps>`
   `};
 `;
 
-export const Hero = ({src, alt, size = 'normal', disabled}: HeroProps) => {
+export const Hero = ({src, alt, size = 'normal', disabled, backgroundColor}: HeroProps) => {
   return (
-    <>
+    <div style={{backgroundColor}}>
       <HeroComponent disabled={disabled} src={src} alt={alt} size={size} data-testid={"Hero"}/>
-    </>
+    </div>
   );
 };

@@ -8,6 +8,7 @@ interface ImageProps {
   alt: string;
   size?: 'mobile' | 'normal';
   disabled?: boolean;
+  backgroundColor?: string;
 }
 
 export type { ImageProps };
