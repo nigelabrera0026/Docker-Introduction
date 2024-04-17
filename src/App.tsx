@@ -26,12 +26,17 @@ function App() {
 export default App
 /*
 TODO:
-    Table Create Subcomponents
-    Configure the wireframe doc to be equal to the stories itself
-
+    Table Row
+    Table Header
+    Table Footer
+    Table
 ? Done:
     Dropdown backgroundColor
     Label backgroundColor
+
+    Table Cell Done
+
+
 
 Coding 13
 
