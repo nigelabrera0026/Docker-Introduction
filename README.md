@@ -195,23 +195,3 @@ npx install playwright
 npm install --save-dev concurrently
 for CI/CD
 
-
-export default defineConfig(() => {
-  if (process.env.BUILD_TYPE === 'storybook') {
-    return {
-      plugins: [react(),  reactRefresh()],
-      base: "/storybook",
-      esbuild: {
-        jsxFactory: "React.createElement",
-        jsxFragment: "React.Fragment",
-      }
-    }
-  } else {
-    return {
-      plugins: [react(),  reactRefresh()],
-      esbuild: {
-        jsxFactory: "React.createElement",
-        jsxFragment: "React.Fragment",
-      }
-    }
-  })
