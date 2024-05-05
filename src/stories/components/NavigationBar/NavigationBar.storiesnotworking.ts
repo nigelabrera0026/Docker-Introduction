@@ -25,5 +25,5 @@ type Story = StoryObj<typeof meta>;
 export const Normal: Story = {
   args: {
     size: 'normal',
-  }
+  },
 };
