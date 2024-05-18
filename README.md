@@ -90,7 +90,7 @@ To know how to install docker in bash, click [here](https://docs.docker.com/engi
 
 - To build the docker image we need to use docker build.
 ```bash
-sudo docker build -t abrera_nigel_coding_assignment11 .
+sudo docker build -t {container name that you want} -f {path/to/docker/file} . 
 ```
 
 The -t is used to specify a name and optionally a tag.
@@ -112,6 +112,12 @@ The `5173` is the port inside docker where the app is connected.
 The last part is the image name.
 
 Now you can access it in your `localhost:8083` or `127.0.0.1:8083`.
+
+- If you want to run and dont want to save
+
+```bash
+sudo docker run --rm -p 8083:5173 abrera_nigel_coding_assignment11
+```
 
 ## Additional information for Docker
 
