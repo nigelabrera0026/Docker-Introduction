@@ -10,7 +10,7 @@ interface DropdownProps {
   open?: boolean;
   backgroundColor?: string;
   disabled?: boolean;
-  size: 'mobile' | 'normal'
+  size: 'mobile' | 'normal';
 }
 
 export type { DropdownProps};
