@@ -2,7 +2,7 @@
 FROM node:21-alpine3.18
 
 # Create and set the working directory
-WORKDIR /abrera_nigel_site
+WORKDIR /portfolio
 
 # Copying the package.json and package-lock.json to the workdir
 COPY package*.json ./

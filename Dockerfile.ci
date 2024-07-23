@@ -2,7 +2,7 @@
 FROM node:21-bullseye
 
 # Create and set the working directory
-WORKDIR /abrera_nigel_site
+WORKDIR /portfolio
 
 COPY package*.json .
 
