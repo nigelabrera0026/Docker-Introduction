@@ -3,7 +3,7 @@
 @date:      March 02, 2024
 */
 import type { Meta, StoryObj } from '@storybook/react';
-import { userEvent, within } from "@storybook/test";
+import { userEvent, within, fn } from "@storybook/test";
 import { Button } from './Button';
 
 const meta: Meta<typeof Button> = {
@@ -25,7 +25,7 @@ export const Normal: Story = {
   args: {
     size: 'normal',
     label: 'Button',
-
+    onClick: fn(),
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -37,6 +37,7 @@ export const Disabled: Story = {
   args:{
     disabled: true,
     label: 'Button',
+    onClick: fn(),
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -48,6 +49,7 @@ export const Mobile: Story = {
   args: {
     size: 'mobile',
     label: 'Button',
+    onClick: fn(),
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -60,6 +62,7 @@ export const MobileDisabled: Story = {
     size: 'mobile',
     label: 'Button',
     disabled: true,
+    onClick: fn(),
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
