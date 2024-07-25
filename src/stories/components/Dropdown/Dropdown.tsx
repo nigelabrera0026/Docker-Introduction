@@ -3,7 +3,7 @@
 @date:      March 03, 2024
 */
 import { useState } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { DropdownProps } from './Dropdown.types';
 import { Text } from '../Text/Text';
 
@@ -28,7 +28,7 @@ const DropdownButton = styled.button<DropdownProps>`
   position: relative;
 
 
-  ${({ disabled }) => disabled && `
+  ${({ disabled }) => disabled && css`
     opacity: 0.5;
     cursor: not-allowed;
   `}
@@ -80,7 +80,7 @@ const Dropdown = ({
         <Text size={size} primary={false}>Options</Text>
       </DropdownButton>
       <DropdownContent open={isOpen} size={size}>
-        <DropdownItem style={{ backgroundColor }} ><Text size={size} children="Profile" /></DropdownItem>
+        <DropdownItem style={{ backgroundColor }}><Text size={size} children="Profile" /></DropdownItem>
         <DropdownItem style={{ backgroundColor }}><Text size={size} children="Settings" /></DropdownItem>
         <DropdownItem style={{ backgroundColor }}><Text size={size} children="Logout" /></DropdownItem>
       </DropdownContent>

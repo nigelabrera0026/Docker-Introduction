@@ -3,10 +3,10 @@
  * @date:      April 30, 2024
  */
 import styled, { css } from 'styled-components';
-import { Text } from '../Text/Text';
+import { Text } from '../Text';
 import { Dropdown } from '../Dropdown/Dropdown';
 import { NavigationBarProps } from './NavigationBar.types';
-import { TextProps } from '../Text';
+
 
 const StyledContainer = styled.div<NavigationBarProps>`
   display: flex;
@@ -27,7 +27,7 @@ const StyledContainer = styled.div<NavigationBarProps>`
   `} 
 `;
 
-const TextStyling = styled.p<TextProps>`
+const TextStyling = styled(Text)<{ size?: 'mobile' | 'normal' }>`
   ${({size}) => size === 'mobile' ? css`
     // if it is mobile
     font-size: 20px;
@@ -52,7 +52,7 @@ const NavigationBar = ({
       backgroundColor={backgroundColor}
       disabled={disabled}
     >
-      <Text size={size} children="Nigel"/>
+      <TextStyling size={size} children="Nigel"/>
       <Dropdown size={size}  />
     </StyledContainer>
   );
