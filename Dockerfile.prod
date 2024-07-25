@@ -13,7 +13,6 @@ RUN npm install
 # Copying the entire app to the working directory
 COPY . .
 
-# Building the Next.js app
 RUN npm run cd
 
 # Expose the port the app will run on
