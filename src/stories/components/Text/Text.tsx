@@ -13,9 +13,9 @@ const StyledText = styled.p<TextProps>`
 
 
   ${({ primary }) => primary ? css`
-  color: #F1B080;
+    color: #F1B080;
   ` : css`
-  color: #FFFFFF;
+    color: #FFFFFF;
   `};
 
 

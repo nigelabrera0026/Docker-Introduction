@@ -60,7 +60,6 @@ const DropdownItem = styled.li`
   }
 `;
 
-
 const Dropdown = ({
   disabled = false,
   open,
@@ -81,9 +80,9 @@ const Dropdown = ({
         <Text size={size} primary={false}>Options</Text>
       </DropdownButton>
       <DropdownContent open={isOpen} size={size}>
-        <DropdownItem style={{ backgroundColor }} ><Text size={size}>Profile</Text></DropdownItem>
-        <DropdownItem style={{ backgroundColor }}><Text size={size}>Settings</Text></DropdownItem>
-        <DropdownItem style={{ backgroundColor }}><Text size={size}>Logout</Text></DropdownItem>
+        <DropdownItem style={{ backgroundColor }} ><Text size={size} children="Profile" /></DropdownItem>
+        <DropdownItem style={{ backgroundColor }}><Text size={size} children="Settings" /></DropdownItem>
+        <DropdownItem style={{ backgroundColor }}><Text size={size} children="Logout" /></DropdownItem>
       </DropdownContent>
     </DropdownContainer>
   );
