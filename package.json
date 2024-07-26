@@ -14,7 +14,7 @@
     "test:jest": "jest",
     "test:storybook": "test-storybook",
     "test": "concurrently -gs all -c 'bold.purple,bold.blue,bold.yellow,bold.green,bold.red' 'npm:test:*(!ts)'",
-    "ci:test": "npm run storybook & sleep 10 && npm run test",
+    "ci:test": "npm run storybook & sleep 5 && npm run test",
     "cd": "BUILD_COMBINED='true' concurrently -gs all -c 'bold.purple,bold.blue,bold.yellow,bold.green,bold.red' npm:build:main 'npm:build:storybook -- -o dist/storybook'"
   },
   "jest": {
@@ -50,6 +50,7 @@
     "@storybook/addon-interactions": "^8.2.6",
     "@storybook/addon-jest": "^8.2.6",
     "@storybook/addon-links": "^8.2.6",
+    "@storybook/addon-mdx-gfm": "^8.2.6",
     "@storybook/addon-onboarding": "^8.2.6",
     "@storybook/addon-themes": "^8.2.6",
     "@storybook/blocks": "^8.2.6",

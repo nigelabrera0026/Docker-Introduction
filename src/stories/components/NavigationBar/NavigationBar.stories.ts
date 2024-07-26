@@ -32,3 +32,14 @@ export const Normal: Story = {
     expect(canvas.getByTestId("NavBar")).toBeInTheDocument();
   },
 };
+
+export const Mobile: Story = {
+  args: {
+    size: 'mobile',
+    disabled: false,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    expect(canvas.getByTestId("NavBar")).toBeInTheDocument();
+  },
+}

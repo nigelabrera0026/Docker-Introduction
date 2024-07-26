@@ -9,10 +9,15 @@ import { Text } from '../Text/Text';
 
 const DropdownContainer = styled.div<{ size: 'mobile' | 'normal'}>`
   position: relative;
-  width: ${({ size }) => (size === 'mobile' ? '100%' : '200px')};
+  align-items: center;
+  width: ${({ size }) => (size === 'mobile' ? '10px' : '200px')};
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  /* overflow: visible; */
 `;
 
+const TextStyle = styled(Text)`
+  
+`;
 
 const DropdownButton = styled.button<DropdownProps>`
   width: 100%;
@@ -26,8 +31,7 @@ const DropdownButton = styled.button<DropdownProps>`
   cursor: pointer;
   outline: none;
   position: relative;
-
-
+  justify-content: center;
   ${({ disabled }) => disabled && css`
     opacity: 0.5;
     cursor: not-allowed;
@@ -37,8 +41,6 @@ const DropdownButton = styled.button<DropdownProps>`
 const DropdownContent = styled.ul<DropdownProps>`
   display: ${({ open }) => (open ? 'block' : 'none')};
   position: absolute;
-  background: #FFFFFF;
-  border: 1px solid #ddd;
   border-radius: 4px;
   padding: 0;
   margin-top: 5px;
@@ -54,10 +56,10 @@ const DropdownItem = styled.li`
   align-items: center;
   padding: 8px 16px;
   cursor: pointer;
-
+/* 
   &:hover {
     background-color: #f8f8f8; 
-  }
+  } */
 `;
 
 const Dropdown = ({
@@ -77,12 +79,12 @@ const Dropdown = ({
   return (
     <DropdownContainer size={size} >
       <DropdownButton style={{ backgroundColor }} disabled={disabled} onClick={toggleDropdown} size={size} data-testid="dropdown">
-        <Text size={size} primary={false}>Options</Text>
+        <TextStyle size={size} primary={false}>Options</TextStyle>
       </DropdownButton>
       <DropdownContent open={isOpen} size={size}>
-        <DropdownItem style={{ backgroundColor }}><Text size={size} children="Profile" /></DropdownItem>
-        <DropdownItem style={{ backgroundColor }}><Text size={size} children="Settings" /></DropdownItem>
-        <DropdownItem style={{ backgroundColor }}><Text size={size} children="Logout" /></DropdownItem>
+        <DropdownItem style={{ backgroundColor }}><TextStyle size={size} children="Profile" /></DropdownItem>
+        <DropdownItem style={{ backgroundColor }}><TextStyle size={size} children="Settings" /></DropdownItem>
+        <DropdownItem style={{ backgroundColor }}><TextStyle size={size} children="Logout" /></DropdownItem>
       </DropdownContent>
     </DropdownContainer>
   );

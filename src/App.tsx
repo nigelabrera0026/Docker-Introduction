@@ -1,11 +1,11 @@
-import { useState } from 'react'
+/**
+ * @author  Nigel Abrera
+ */
 import './App.css'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import { Button, ButtonProps } from './stories/components';
+import { NavigationBar, NavigationBarProps } from './stories/components/NavigationBar';
 
 function App() {
-
 
   const handleButtonClick = () => {
     console.log('button was clicked');
@@ -18,11 +18,17 @@ function App() {
     onClick: handleButtonClick,
   };
 
+  const navigationProps: NavigationBarProps = {
+    size: 'normal',
+    disabled: false,
+  };
+
   return (
     <>
+      <NavigationBar {...navigationProps} /><br/>
       <Button {...buttonProps} />
     </>
   )
 }
 
-export default App
+export default App;

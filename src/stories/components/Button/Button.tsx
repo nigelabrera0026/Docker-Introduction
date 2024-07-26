@@ -12,12 +12,12 @@ const StyledButton = styled.button<ButtonProps>`
   min-width: 90px;
   letter-spacing: 0.6px;
   border-radius: 3px;
-
   display: inline-block;
   line-height: 1;
   border: 0;
   color: white;
   background-color: #F1B080;
+  align-items: center;
 
   ${({ size }) => size === 'mobile'? css`
           font-size: 12px;
