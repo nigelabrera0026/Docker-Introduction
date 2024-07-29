@@ -1,9 +1,11 @@
 /**
  * @author  Nigel Abrera
+ * @date    July 29, 2024
  */
 import './App.css'
 import { Button, ButtonProps } from './stories/components';
-import { NavigationBar, NavigationBarProps } from './stories/components/NavigationBar';
+import { NavigationBar, NavigationBarProps } from './stories/components/page_components/NavigationBar';
+import { Container, ContainerProps } from './stories/components/Container';
 
 function App() {
 
@@ -23,11 +25,15 @@ function App() {
     disabled: false,
   };
 
+  const containerProps: ContainerProps = {
+    size: 'normal',
+  };
   return (
-    <>
+    // Configure the container.
+    <Container {...containerProps}>
       <NavigationBar {...navigationProps} /><br/>
       <Button {...buttonProps} />
-    </>
+    </Container>
   )
 }
 
