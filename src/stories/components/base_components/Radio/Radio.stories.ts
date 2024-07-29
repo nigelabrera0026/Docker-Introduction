@@ -1,7 +1,8 @@
-/*
-@author:    Nigel Abrera
-@date:      March 09, 2024
-*/
+/**
+ * Stories for Radio 
+ * @author    Nigel Abrera 
+ * @date      March 09, 2024
+ */
 import { userEvent, within } from "@storybook/test";
 import { Meta, StoryObj } from '@storybook/react';
 import { Radio } from './Radio';

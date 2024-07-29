@@ -13,9 +13,7 @@ const DropdownContainer = styled.div<{ size: 'mobile' | 'normal'}>`
   align-items: center;
   width: ${({ size }) => (size === 'mobile' ? '100%' : '200px')};
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  /* overflow: visible; */
 `;
-
 
 const DropdownButton = styled.button<DropdownProps>`
   width: 100%;
@@ -65,7 +63,6 @@ const Dropdown = ({
   const [isOpen, setIsOpen] = useState(open);
 
   const toggleDropdown = () => {
-
     if (!disabled) {
       setIsOpen(!isOpen);
     };

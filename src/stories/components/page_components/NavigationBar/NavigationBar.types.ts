@@ -7,6 +7,6 @@ interface NavigationBarProps {
   backgroundColor?: string;
   size?: 'mobile' | 'normal';
   disabled?: boolean;
-}
+};
 
 export type { NavigationBarProps };

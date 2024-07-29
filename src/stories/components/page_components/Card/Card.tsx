@@ -22,7 +22,7 @@ const StyledCard = styled.div<{ size?: 'mobile' | 'normal' }>`
     width: 150px;
     padding: 12px;
   ` : css`
-    width: 280px;
+    width: 280px;ContainerProps
     padding: 16px;
   `};
 `;
@@ -75,7 +75,7 @@ const StyledButton = styled(Button)`
   cursor: pointer;
 `;
 
-export const Card = ({
+const Card = ({
   image,
   title = "Card Component Title",
   content = "Lorem ipsum somthing, this needs to have a truncation at length x",
@@ -96,3 +96,4 @@ export const Card = ({
   );
 };
 
+export { Card };
