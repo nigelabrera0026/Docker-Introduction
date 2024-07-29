@@ -1,9 +1,10 @@
 /**
  * @author  Nigel Abrera
+ * @date    July 29, 2024
  */
 import './App.css'
 import { Button, ButtonProps } from './stories/components';
-import { NavigationBar, NavigationBarProps } from './stories/components/NavigationBar';
+import { NavigationBar, NavigationBarProps } from './stories/components/page_components/NavigationBar';
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
   };
 
   return (
+    // Configure the container.
     <>
       <NavigationBar {...navigationProps} /><br/>
       <Button {...buttonProps} />
