@@ -46,7 +46,7 @@ coverage/
 out
 
 # Storybook files
-.storybook/
+# .storybook/
 
 # VSCode directory
 .vscode/
