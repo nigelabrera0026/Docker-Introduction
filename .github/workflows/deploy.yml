@@ -11,6 +11,7 @@ permissions:
   id-token: write
 
 jobs:
+  
   test:
     name: Run Test Suite
     runs-on: ubuntu-latest
