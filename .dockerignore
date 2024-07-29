@@ -7,10 +7,13 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Production
 node_modules
 dist
 dist-ssr
 *.local
+.env
+.vite-env.d.test
 
 # Editor directories and files
 .vscode/*
@@ -22,3 +25,28 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+Thumbs.db
+ehthumbs.db
+*.log
+.idea
+.vscode
+*.swp
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Optional npm cache directory
+.npm
+
+# Parcel-bundler cache (https://parceljs.org/)
+.cache
+
+# Next.js build output
+.next
+out
+
+# Storybook files
+.storybook/
+
+# VSCode directory
+.vscode/
