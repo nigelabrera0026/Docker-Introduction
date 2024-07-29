@@ -21,7 +21,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Build Docker images
+    - name: Build docker images
       run: docker build -t main -f $COMPOSE_FILE .
 
     - name: Run tests
