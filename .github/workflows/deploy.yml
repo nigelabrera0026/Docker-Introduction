@@ -12,19 +12,19 @@ permissions:
 
 jobs:
   test:
-    name: Run test suite
+    name: Run Test Suite
     runs-on: ubuntu-latest
     env:
       COMPOSE_FILE: ./Dockerfile.ci
 
     steps:
-    - name: Checkout code
+    - name: Checkout Code
       uses: actions/checkout@v4
 
     - name: Build Docker images
       run: docker build -t main -f $COMPOSE_FILE .
 
-    - name: Run tests
+    - name: Run Tests
       run: docker run main
 
   deploy:
