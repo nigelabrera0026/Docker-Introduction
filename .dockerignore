@@ -45,8 +45,5 @@ coverage/
 .next
 out
 
-# Storybook files
-# .storybook/
-
 # VSCode directory
 .vscode/
