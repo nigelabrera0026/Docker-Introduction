@@ -2,7 +2,7 @@ name: Run tests then Deploy
 on:
   push:
     branches:
-      - release/prod-v0.1
+      - 'release/**'
   workflow_dispatch:
 
 permissions:
