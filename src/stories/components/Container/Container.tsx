@@ -1,7 +1,8 @@
 /**
  * Container for the main page.
- * @author Nigel Abrera
- * @date   July 29, 2024
+ * @author  Nigel Abrera
+ * @date    July 29, 2024
+ * @update  July 29, 2024
  */
 
 import styled from 'styled-components';

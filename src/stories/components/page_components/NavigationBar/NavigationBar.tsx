@@ -8,14 +8,18 @@ import { Text } from '../../base_components/Text';
 import { Dropdown } from '../Dropdown/Dropdown';
 import { NavigationBarProps } from './NavigationBar.types';
 
+/*
+TODO: Configure alignments of components and its children.
+*/
+
 const ListContainer = styled.ul<NavigationBarProps>`
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   list-style-type: none;
-  justify-content: space-between;
+  /* justify-content: center; */
+  /* width: fit-content; */
   margin: 0;
   padding: 0;
-  width: fit-content;
   ${({ disabled }) => disabled && css`
     opacity: 0.5;
     cursor: not-allowed;
@@ -24,7 +28,6 @@ const ListContainer = styled.ul<NavigationBarProps>`
 
 const NameHolder = styled.li<NavigationBarProps>`
   float: left;
-  display: flex;
   align-items: center;
   flex-grow: 1;
 `;
@@ -54,8 +57,7 @@ const NavigationBar = ({
       data-testid={"NavBar"}
       size={size}
       backgroundColor={backgroundColor}
-      disabled={disabled}  
-    >
+      disabled={disabled}>
       <NameHolder>
         <TextStyling size={size} children="Nigel"/>
       </NameHolder>

@@ -6,7 +6,16 @@ import './App.css'
 import { Button, ButtonProps } from './stories/components';
 import { NavigationBar, NavigationBarProps } from './stories/components/page_components/NavigationBar';
 import { Container, ContainerProps } from './stories/components/Container';
+/* 
+TODO: Figure out what image,
+      Figure out logic flow of the website
+      Configure multi page
+*/
 
+/**
+ * The app react component that would be forwarded to the main.
+ * @returns Home page
+ */
 function App() {
 
   const handleButtonClick = () => {
@@ -30,7 +39,6 @@ function App() {
   };
   
   return (
-    // Configure the container.
     <Container {...containerProps}>
       <NavigationBar {...navigationProps} />
       <Button {...buttonProps} />
