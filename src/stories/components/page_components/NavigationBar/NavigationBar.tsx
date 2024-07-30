@@ -13,11 +13,9 @@ TODO: Configure alignments of components and its children.
 */
 
 const ListContainer = styled.ul<NavigationBarProps>`
+  
   display: flex;
-  /* align-items: center; */
   list-style-type: none;
-  /* justify-content: center; */
-  /* width: fit-content; */
   margin: 0;
   padding: 0;
   ${({ disabled }) => disabled && css`
@@ -27,19 +25,15 @@ const ListContainer = styled.ul<NavigationBarProps>`
 `;
 
 const NameHolder = styled.li<NavigationBarProps>`
-  float: left;
-  align-items: center;
   flex-grow: 1;
 `;
 
 const DropHolder = styled.li<NavigationBarProps>`
-  float: right;
-  align-items: center;
+
 `;
 
 const TextStyling = styled(Text)<{ size?: 'mobile' | 'normal' }>`
-  text-align: center;
-  padding: 14px 16px;
+  float:  left;
   ${({size}) => size === 'mobile' ? css`
     font-size: 10px;
   ` : css`
