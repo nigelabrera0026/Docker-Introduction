@@ -28,10 +28,11 @@ function App() {
   const containerProps: ContainerProps = {
     size: 'normal',
   };
+  
   return (
     // Configure the container.
     <Container {...containerProps}>
-      <NavigationBar {...navigationProps} /><br/>
+      <NavigationBar {...navigationProps} />
       <Button {...buttonProps} />
     </Container>
   )

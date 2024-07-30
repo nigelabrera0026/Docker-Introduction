@@ -10,10 +10,7 @@ import { ContainerProps } from './Container.types';
 const StyledContainer = styled.div<ContainerProps>`
     background-color: ${({ backgroundColor }) => backgroundColor || 'transparent'};
     width: 100%;
-    padding: 16px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
+    margin: 0;
     align-items: center;
     justify-content: center;
     min-height: 100vh;

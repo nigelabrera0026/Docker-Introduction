@@ -49,22 +49,22 @@ const StyledTextTitle = styled(Text)<{ size?: 'mobile' | 'normal'}>`
   margin-bottom: 8px;
   color: grey;
   ${({ size }) => size === 'mobile' ? css`
-     font-size: 10px;
-   ` : css`
-     font-size: 1.25rem;
-   `};
+    font-size: 10px;
+  ` : css`
+    font-size: 1.25rem;
+  `};
 `;
 
 
 const StyledTextBody = styled(Text)`
-   margin-bottom: 16px;
-   color: #666;
-   text-align: center;
-   ${({ size }) => size === 'mobile' ? css`
-     font-size: 10px;
-   ` : css`
-     font-size: 1.25rem;
-   `};
+  margin-bottom: 16px;
+  color: #666;
+  text-align: center;
+  ${({ size }) => size === 'mobile' ? css`
+    font-size: 10px;
+  ` : css`
+    font-size: 1.25rem;
+  `};
 `;
 
 const StyledButton = styled(Button)`
@@ -78,7 +78,7 @@ const StyledButton = styled(Button)`
 const Card = ({
   image,
   title = "Card Component Title",
-  content = "Lorem ipsum somthing, this needs to have a truncation at length x",
+  content = "Lorem ipsum something, this needs to have a truncation at length x",
   linker = "Learn More",
   size = 'normal',
   disabled = false,
