@@ -8,8 +8,16 @@ import { NavigationBar, NavigationBarProps } from './stories/components/page_com
 import { Container, ContainerProps } from './stories/components/Container';
 /* 
 TODO: Figure out what image,
-      Figure out logic flow of the website
-      Configure multi page
+TODO: Figure out logic flow of the website
+TODO: Configure multi page (?)
+TODO: Modify components and stories
+TODO: Edit figma design and finalize for v0.1;
+*/
+/*
+ * Logic flow
+TODO: Create section components to build up the pages
+TODO: Check this site for reference:
+ *  https://webflow.com/ix2
 */
 
 /**
@@ -32,10 +40,12 @@ function App() {
   const navigationProps: NavigationBarProps = {
     size: 'normal',
     disabled: false,
+    
   };
 
   const containerProps: ContainerProps = {
     size: 'normal',
+    backgroundColor: '#ffffff',
   };
   
   return (

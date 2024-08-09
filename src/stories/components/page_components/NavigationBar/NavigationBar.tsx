@@ -10,10 +10,13 @@ import { NavigationBarProps } from './NavigationBar.types';
 
 /*
 TODO: Configure alignments of components and its children.
+TODO: Make navbar stick when scrolling down.
+TODO: Recreate hero image and learn how to make a slideshow.
+TODO: Implement styling and confirm in GPT.
+FIXME Remove padding or the size of the button in the dropdown component.
 */
 
 const ListContainer = styled.ul<NavigationBarProps>`
-  
   display: flex;
   list-style-type: none;
   margin: 0;
@@ -26,10 +29,11 @@ const ListContainer = styled.ul<NavigationBarProps>`
 
 const NameHolder = styled.li<NavigationBarProps>`
   flex-grow: 1;
+  padding-left: 20px;
 `;
 
 const DropHolder = styled.li<NavigationBarProps>`
-
+  padding: 0;
 `;
 
 const TextStyling = styled(Text)<{ size?: 'mobile' | 'normal' }>`
@@ -38,7 +42,8 @@ const TextStyling = styled(Text)<{ size?: 'mobile' | 'normal' }>`
     font-size: 10px;
   ` : css`
     font-size: 20px; 
-  `}
+  `};
+  letter-spacing: 5px;
 `;
 
 const NavigationBar = ({
@@ -53,7 +58,7 @@ const NavigationBar = ({
       backgroundColor={backgroundColor}
       disabled={disabled}>
       <NameHolder>
-        <TextStyling size={size} children="Nigel"/>
+        <TextStyling size={size} children="NIGEL"/>
       </NameHolder>
       <DropHolder>
         <Dropdown size={size} />
