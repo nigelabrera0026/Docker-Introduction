@@ -17,38 +17,38 @@ TODO: Check this site for reference:
 
 /** Master Plan
  * FIXME: Configure styling of the nav bar especially the dropdown
- * TODO: Check if you could separate the props from the main function.
- * 
  */
+
+// Functionalities
+const handleButtonClick = () => {
+  console.log('button was clicked');
+};
+
+
+// Props 
+const buttonProps: ButtonProps = {
+  size: 'normal',
+  label: 'ButtonTest',
+  disabled: false,
+  onClick: handleButtonClick,
+};
+
+const navigationProps: NavigationBarProps = {
+  size: 'normal',
+  disabled: false,
+  
+};
+
+const containerProps: ContainerProps = {
+  size: 'normal',
+  backgroundColor: '#ffffff',
+};
 
 /**
  * The app react component that would hold all the components to be presented.
  * @returns Homepage
  */
 function App() {
-
-  const handleButtonClick = () => {
-    console.log('button was clicked');
-  };
-
-  const buttonProps: ButtonProps = {
-    size: 'normal',
-    label: 'ButtonTest',
-    disabled: false,
-    onClick: handleButtonClick,
-  };
-
-  const navigationProps: NavigationBarProps = {
-    size: 'normal',
-    disabled: false,
-    
-  };
-
-  const containerProps: ContainerProps = {
-    size: 'normal',
-    backgroundColor: '#ffffff',
-  };
-  
   return (
     <Container {...containerProps}>
       <NavigationBar {...navigationProps} />

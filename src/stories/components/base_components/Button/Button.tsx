@@ -16,8 +16,9 @@ const StyledButton = styled.button<ButtonProps>`
   display: inline-block;
   line-height: 1;
   border: 0;
+  /* border-color: white; !Not sure if it s*/
   color: white;
-  background-color: #F1B080;
+  background-color: #6482AD;
   align-items: center;
 
   ${({ size }) => size === 'mobile'? css`
@@ -54,19 +55,24 @@ const StyledButton = styled.button<ButtonProps>`
           transform: translateY(1px);
         };
 `;
+
+
 export const Button = ({
   size = 'normal',
   backgroundColor,
   label,
   ...props
 }: ButtonProps) => {
+
   const [isClicked, setIsClicked] = useState(false);
+
   const handleClick = useCallback(() => {
     setIsClicked(true);
     if (props.onClick) {
       props.onClick();
     }
   }, [props]);
+
   return (
     <StyledButton
       size={size}
