@@ -18,6 +18,7 @@ const DropdownContainer = styled.div<{ size: 'mobile' | 'normal'}>`
 const DropdownButton = styled.button<DropdownProps>`
   width: 100%;
   padding: 0;
+
   ${({ primary }) => primary === true ? css`
     // Primary Color
     background: #F1B080;
@@ -37,6 +38,17 @@ const DropdownButton = styled.button<DropdownProps>`
   outline: none;
   position: relative;
   justify-content: center;
+  border-color: none;
+
+  &:focus {
+    border: none;
+  };
+
+  &:hover {
+    background-color: #f8f8f8; 
+    border: none;
+  };
+
   ${({ disabled }) => disabled && css`
     opacity: 0.5;
     cursor: not-allowed;

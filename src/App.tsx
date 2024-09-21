@@ -12,6 +12,7 @@ import { Container, ContainerProps } from './stories/components/Container';
 TODO: Create section components to build up the pages
 TODO: Check this site for reference:
  *  https://webflow.com/ix2
+ * Create carousel component
 */
 
 

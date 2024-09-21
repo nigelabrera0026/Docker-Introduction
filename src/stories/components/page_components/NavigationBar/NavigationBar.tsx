@@ -38,11 +38,13 @@ const DropHolder = styled.li<NavigationBarProps>`
 
 const TextStyling = styled(Text)<{ size?: 'mobile' | 'normal' }>`
   float:  left;
+
   ${({size}) => size === 'mobile' ? css`
     font-size: 10px;
   ` : css`
     font-size: 20px; 
   `};
+  
   letter-spacing: 5px;
 `;
 
