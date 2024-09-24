@@ -3,7 +3,7 @@
  * @date    July 29, 2024
  */
 import './App.css'
-import { Button, ButtonProps } from './stories/components';
+import { Button, ButtonProps, HeroProps } from './stories/components';
 import { NavigationBar, NavigationBarProps } from './stories/components/page_components/NavigationBar';
 import { Container, ContainerProps } from './stories/components/Container';
 
@@ -14,11 +14,6 @@ TODO: Check this site for reference:
  *  https://webflow.com/ix2
  * Create carousel component
 */
-
-
-/** Master Plan
- * FIXME: Configure styling of the nav bar especially the dropdown
- */
 
 // Functionalities
 const handleButtonClick = () => {
@@ -43,6 +38,12 @@ const navigationProps: NavigationBarProps = {
 const containerProps: ContainerProps = {
   size: 'normal',
   backgroundColor: '#ffffff',
+};
+
+const heroProps: HeroProps = {
+  size: 'normal',
+  src: 'image_component.jpg',
+  alt: 'sample_image',
 };
 
 /**

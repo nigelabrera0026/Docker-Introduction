@@ -59,7 +59,7 @@ const StyledButton = styled.button<ButtonProps>`
   &:focus {
     outline: none; /* Removes focus outline */
     border: none;  /* Ensures no border is added */
-  }
+  };
 `;
 
 export const Button = ({
@@ -79,7 +79,7 @@ export const Button = ({
     if (props.onClick) {
       props.onClick();
     };
-    
+
   }, [props]);
 
   return (

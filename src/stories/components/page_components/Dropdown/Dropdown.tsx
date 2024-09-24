@@ -40,8 +40,10 @@ const DropdownButton = styled.button<DropdownProps>`
   justify-content: center;
   border-color: none;
 
+  /* Focus state {when clicked or tabbed} */
   &:focus {
-    border: none;
+    outline: none; /* Removes focus outline */
+    border: none;  /* Ensures no border is added */
   };
 
   &:hover {
