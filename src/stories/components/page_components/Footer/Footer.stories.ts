@@ -26,6 +26,6 @@ export const Normal: Story = {
     },
     play: async ({ canvasElement }) => {
         const canvas = within(canvasElement);
-        expect(canvas.getByTestId('footer')).toBeInTheDocument();
+        expect(canvas.getByTestId('Footer')).toBeInTheDocument();
     },
 };

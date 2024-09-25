@@ -1,9 +1,3 @@
-/**
- * Navigation bar component.
- * @author    Nigel Abrera
- * @date      April 30, 2024
- * @update    September 21, 2024
- */
 import styled, { css } from 'styled-components';
 import { Text } from '../../base_components/Text';
 import { Dropdown } from '../Dropdown/Dropdown';
@@ -39,7 +33,6 @@ const DropHolder = styled.li<NavigationBarProps>`
 
 const TextStyling = styled(Text)<{ size?: 'mobile' | 'normal' }>`
   float:  left;
-
   ${({size}) => size === 'mobile' ? css`
     font-size: 10px;
   ` : css`

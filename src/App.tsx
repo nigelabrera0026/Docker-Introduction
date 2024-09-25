@@ -1,11 +1,10 @@
-/**
- * @author  Nigel Abrera
- * @date    July 29, 2024
- */
 import './App.css'
-import { Button, ButtonProps, HeroProps } from './stories/components';
+import { Button, ButtonProps } from './stories/components';
 import { NavigationBar, NavigationBarProps } from './stories/components/page_components/NavigationBar';
 import { Container, ContainerProps } from './stories/components/Container';
+import { Hero, HeroProps } from './stories/components';
+import { FooterProps, Footer } from './stories/components/page_components/Footer';
+
 
 /*
  * Logic flow
@@ -32,7 +31,6 @@ const buttonProps: ButtonProps = {
 const navigationProps: NavigationBarProps = {
   size: 'normal',
   disabled: false,
-  
 };
 
 const containerProps: ContainerProps = {
@@ -46,6 +44,10 @@ const heroProps: HeroProps = {
   alt: 'sample_image',
 };
 
+const footerProps: FooterProps = {
+  size: 'normal',
+};
+
 /**
  * The app react component that would hold all the components to be presented.
  * @returns Homepage
@@ -54,9 +56,13 @@ function App() {
   return (
     <Container {...containerProps}>
       <NavigationBar {...navigationProps} />
-      <Button {...buttonProps} />
+      <Hero {...heroProps} />
+      <Hero {...heroProps} />
+      
+      
+      <Footer {...footerProps} />
     </Container>
-  )
-}
+  );
+};
 
 export default App;

@@ -1,9 +1,3 @@
-/*
-@author:    Nigel Abrera
-@date:      March 03, 2024
-*/
-
-import React from 'react';
 import styled, { css } from 'styled-components';
 import { TextProps } from './Text.types';
 
@@ -11,13 +5,11 @@ const StyledText = styled.p<TextProps>`
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   letter-spacing: 0.6px;
 
-
   ${({ primary }) => primary ? css`
-    color: #F1B080;
+    color: #6482AD;
   ` : css`
     color: #FFFFFF;
   `};
-
 
   ${({ size }) => size === 'mobile'? css`
       font-size: 10px;
@@ -26,8 +18,7 @@ const StyledText = styled.p<TextProps>`
   `};
 
   ${({ disabled }) => disabled && css`color: #333;`};
-  ${({ error }) => error && css`color:  red;`}
-
+  ${({ error }) => error && css`color: red;`};
 `;
 
 export const Text = ({
@@ -40,11 +31,11 @@ export const Text = ({
 }: TextProps) => {
   return (
     <StyledText
-                data-testid={"Text"}
-                size={ size }
-                style={{ backgroundColor }}
-                primary={primary}
-                error={error} {...props}>
+      data-testid={"Text"}
+      size={ size }
+      style={{ backgroundColor }}
+      primary={primary}
+      error={error} {...props}>
       { children }
     </StyledText>
   )

@@ -1,9 +1,3 @@
-/** 
- * Stories for Card.
- * @author Nigel Abrera
- * @date   March 02, 2024
- */
-
 import { userEvent, within } from "@storybook/test";
 import type { Meta, StoryObj } from '@storybook/react';
 import { Card } from './Card';
