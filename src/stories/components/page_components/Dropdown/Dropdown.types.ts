@@ -12,6 +12,7 @@ interface DropdownProps {
   backgroundColor?: string;
   disabled?: boolean;
   size: 'mobile' | 'normal';
+  primary?: boolean;
 }
 
 export type { DropdownProps};

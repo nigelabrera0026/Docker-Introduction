@@ -11,15 +11,25 @@ import { Text } from '../../base_components/Text';
 const DropdownContainer = styled.div<{ size: 'mobile' | 'normal'}>`
   position: relative;
   align-items: center;
-  width: ${({ size }) => (size === 'mobile' ? '100%' : '200px')};
+  width: ${({ size }) => (size === 'mobile' ? '100%' : '150px')};
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 `;
 
 const DropdownButton = styled.button<DropdownProps>`
   width: 100%;
-  padding: ${({ size }) => (size === 'mobile' ? '8px' : '10px 16px')};
-  background: #F1B080;
-  border: 1px solid #F1B080;
+  padding: 0;
+
+  ${({ primary }) => primary === true ? css`
+    // Primary Color
+    background: #F1B080;
+    border: 1px solid #F1B080;
+  ` : css`
+    // White Color
+    background: #ffffff;
+    border: 1px solid #ffffff;
+  
+  `};
+
   border-radius: 4px;
   display: flex;
   justify-content: space-between;
@@ -28,6 +38,19 @@ const DropdownButton = styled.button<DropdownProps>`
   outline: none;
   position: relative;
   justify-content: center;
+  border-color: none;
+
+  /* Focus state {when clicked or tabbed} */
+  &:focus {
+    outline: none; /* Removes focus outline */
+    border: none;  /* Ensures no border is added */
+  };
+
+  &:hover {
+    background-color: #f8f8f8; 
+    border: none;
+  };
+
   ${({ disabled }) => disabled && css`
     opacity: 0.5;
     cursor: not-allowed;
@@ -52,6 +75,18 @@ const DropdownItem = styled.li`
   align-items: center;
   padding: 8px 16px;
   cursor: pointer;
+  &:hover {
+    background-color: #f8f8f8; 
+  };
+`;
+
+const TextStyling = styled(Text)<{ size?: 'mobile' | 'normal' }>`
+  ${({size}) => size === 'mobile' ? css`
+    font-size: 10px;
+  ` : css`
+    font-size: 18px; 
+  `};
+  letter-spacing: 4px;
 `;
 
 const Dropdown = ({
@@ -59,6 +94,7 @@ const Dropdown = ({
   open,
   backgroundColor,
   size = 'normal',
+  primary,
 }: DropdownProps) => {
   const [isOpen, setIsOpen] = useState(open);
 
@@ -70,13 +106,14 @@ const Dropdown = ({
 
   return (
     <DropdownContainer size={size} >
-      <DropdownButton style={{ backgroundColor }} disabled={disabled} onClick={toggleDropdown} size={size} data-testid="dropdown">
-        <Text size={size} primary={false} children="Options"/>
+      <DropdownButton primary={primary} style={{ backgroundColor }} disabled={disabled} onClick={toggleDropdown} size={size} data-testid="dropdown">
+        <TextStyling size={size} primary={true} children="MENU"/>
       </DropdownButton>
       <DropdownContent open={isOpen} size={size}>
-        <DropdownItem style={{ backgroundColor }}><Text size={size} children="Profile" /></DropdownItem>
-        <DropdownItem style={{ backgroundColor }}><Text size={size} children="Settings" /></DropdownItem>
-        <DropdownItem style={{ backgroundColor }}><Text size={size} children="Logout" /></DropdownItem>
+        <DropdownItem style={{ backgroundColor }}><TextStyling size={size} children="ABOUT" /></DropdownItem>
+        <DropdownItem style={{ backgroundColor }}><TextStyling size={size} children="CONNECT" /></DropdownItem>
+        <DropdownItem style={{ backgroundColor }}><TextStyling size={size} children="RESUME" /></DropdownItem>
+        <DropdownItem style={{ backgroundColor }}><TextStyling size={size} children="PROJECTS" /></DropdownItem>
       </DropdownContent>
     </DropdownContainer>
   );

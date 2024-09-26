@@ -1,7 +1,8 @@
 /**
  * Container for the main page.
- * @author Nigel Abrera
- * @date   July 29, 2024
+ * @author  Nigel Abrera
+ * @date    July 29, 2024
+ * @update  July 29, 2024
  */
 
 import styled from 'styled-components';
@@ -13,7 +14,7 @@ const StyledContainer = styled.div<ContainerProps>`
     margin: 0;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    margin: 0;
 `;
 
 const Container = ({
@@ -28,7 +29,6 @@ const Container = ({
         data-testid={"container"}>
             { children }
         </StyledContainer>
-
     );
 };
 

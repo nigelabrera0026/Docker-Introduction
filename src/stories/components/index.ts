@@ -20,3 +20,4 @@ export * from './page_components/Card';
 export * from './page_components/Dropdown';
 export * from './page_components/Table';
 export * from './page_components/NavigationBar';
+export * from './page_components/Footer';

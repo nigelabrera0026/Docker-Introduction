@@ -3,7 +3,7 @@
 @date:      March 03, 2024
 */
 interface TextProps {
-  primary?: boolean,
+  primary?: boolean;
   backgroundColor?: string;
   disabled?: boolean;
   words?: string;

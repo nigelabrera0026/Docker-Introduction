@@ -1,21 +1,21 @@
-/**
- * Navigation bar component.
- * @author    Nigel Abrera
- * @date      April 30, 2024
- */
 import styled, { css } from 'styled-components';
 import { Text } from '../../base_components/Text';
 import { Dropdown } from '../Dropdown/Dropdown';
 import { NavigationBarProps } from './NavigationBar.types';
 
+/*
+TODO: Configure alignments of components and its children.
+TODO: Make navbar stick when scrolling down.
+TODO: Recreate hero image and learn how to make a slideshow.
+TODO: Implement styling and confirm in GPT.
+FIXME Remove padding or the size of the button in the dropdown component.
+*/
+
 const ListContainer = styled.ul<NavigationBarProps>`
   display: flex;
-  align-items: center;
   list-style-type: none;
-  justify-content: space-between;
   margin: 0;
   padding: 0;
-  width: fit-content;
   ${({ disabled }) => disabled && css`
     opacity: 0.5;
     cursor: not-allowed;
@@ -23,25 +23,23 @@ const ListContainer = styled.ul<NavigationBarProps>`
 `;
 
 const NameHolder = styled.li<NavigationBarProps>`
-  float: left;
-  display: flex;
-  align-items: center;
   flex-grow: 1;
+  padding-left: 20px;
 `;
 
 const DropHolder = styled.li<NavigationBarProps>`
-  float: right;
-  align-items: center;
+  padding: 0;
 `;
 
 const TextStyling = styled(Text)<{ size?: 'mobile' | 'normal' }>`
-  text-align: center;
-  padding: 14px 16px;
+  float:  left;
   ${({size}) => size === 'mobile' ? css`
     font-size: 10px;
   ` : css`
     font-size: 20px; 
-  `}
+  `};
+  
+  letter-spacing: 5px;
 `;
 
 const NavigationBar = ({
@@ -54,10 +52,9 @@ const NavigationBar = ({
       data-testid={"NavBar"}
       size={size}
       backgroundColor={backgroundColor}
-      disabled={disabled}  
-    >
+      disabled={disabled}>
       <NameHolder>
-        <TextStyling size={size} children="Nigel"/>
+        <TextStyling size={size} children="NIGEL"/>
       </NameHolder>
       <DropHolder>
         <Dropdown size={size} />

@@ -2,6 +2,7 @@
  * Button component.
  * @author    Nigel Abrera
  * @date      March 02, 2024
+ * @update    September 21, 2024
 */
 import { useState, useCallback } from 'react';
 import styled, { css } from 'styled-components';
@@ -17,56 +18,70 @@ const StyledButton = styled.button<ButtonProps>`
   line-height: 1;
   border: 0;
   color: white;
-  background-color: #F1B080;
+  background-color: #6482AD;
   align-items: center;
-
+  
   ${({ size }) => size === 'mobile'? css`
-          font-size: 12px;
-          padding: 10px 16px;
-        `
-      : css`
-          font-size: 14px;
-          padding: 11px 20px;
-        `};
+        font-size: 12px;
+        padding: 10px 16px;
+      `: css`
+        font-size: 14px;
+        padding: 11px 20px;
+      `
+    };
 
-        /* Disabled State */
-        &:disabled {
-          border: 0;
-          color: #333;
-          background-color: transparent;
-          box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
-          cursor: not-allowed;
-        };
-        &:not(:disabled) {
-          cursor: pointer;
-        }
+  /* Disabled State */
+  &:disabled {
+    border: 0;
+    color: #333;
+    background-color: transparent;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+    cursor: not-allowed;
+  };
 
-        /* Pressed state */
-        &:not(:disabled):active {
-          box-shadow: none;//
-          transform: translateY(1px);//
+  &:not(:disabled) {
+    cursor: pointer;
+  };
 
-        };
+  /* Pressed state */
+  &:not(:disabled):active {
+    box-shadow: none;
+    transform: translateY(1px);
+  };
 
-        /* Hover state */
-        &:not(:disabled):hover {
-          box-shadow: none;
-          transform: translateY(1px);
-        };
+  /* Hover state */
+  &:not(:disabled):hover {
+    box-shadow: none;
+    transform: translateY(1px);
+  };
+
+  /* Focus state {when clicked} */
+  &:focus {
+    outline: none; /* Removes focus outline */
+    border: none;  /* Ensures no border is added */
+  };
 `;
+
 export const Button = ({
   size = 'normal',
   backgroundColor,
   label,
   ...props
+
 }: ButtonProps) => {
+
   const [isClicked, setIsClicked] = useState(false);
+
   const handleClick = useCallback(() => {
+
     setIsClicked(true);
+
     if (props.onClick) {
       props.onClick();
-    }
+    };
+
   }, [props]);
+
   return (
     <StyledButton
       size={size}
