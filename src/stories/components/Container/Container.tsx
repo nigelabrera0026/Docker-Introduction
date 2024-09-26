@@ -14,7 +14,7 @@ const StyledContainer = styled.div<ContainerProps>`
     margin: 0;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    margin: 0;
 `;
 
 const Container = ({

@@ -8,9 +8,9 @@ import { FooterProps } from "./Footer.types";
 import styled, { css } from 'styled-components';
 import { Text } from "../../base_components/Text";
 
-const FooterContainer = styled.div<FooterProps>`
-    /* display: flex; */
-    /* margin: 0; */
+const FooterContainer = styled.footer<FooterProps>`
+    display: relative;
+    margin: 0;
     /* padding: 0; */
     background-color: #6482AD;
     ${({size}) => size === 'mobile' ? css`
@@ -31,7 +31,6 @@ const FooterText = styled(Text)<{ size?: 'mobile' | 'normal' }>`
 
 // Make this something of holding some logos
 // const item = styled
-
 
 const Footer = ({
     size='normal',

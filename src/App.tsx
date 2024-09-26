@@ -58,8 +58,12 @@ function App() {
       <NavigationBar {...navigationProps} />
       <Hero {...heroProps} />
       <Hero {...heroProps} />
-      
-      
+      <Hero {...heroProps} />
+      <Hero {...heroProps} />
+      <Hero {...heroProps} />
+      <Hero {...heroProps} />
+      <Hero {...heroProps} />
+      <Hero {...heroProps} />
       <Footer {...footerProps} />
     </Container>
   );
