@@ -29,8 +29,10 @@ const FooterText = styled(Text)<{ size?: 'mobile' | 'normal' }>`
     `};
 `;
 
-// Make this something of holding some logos
-// const item = styled
+/**
+ * TODO: Fix the structure again, Refer to the vanilla portfolio
+ */
+
 
 const Footer = ({
     size='normal',
