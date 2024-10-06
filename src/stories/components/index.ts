@@ -14,6 +14,7 @@ export * from './base_components/TableRow';
 export * from './base_components/TableCell';
 export * from './base_components/TableHeader';
 export * from './base_components/Label';
+export * from './base_components/Icon';
 
 // Page Components
 export * from './page_components/Card';
