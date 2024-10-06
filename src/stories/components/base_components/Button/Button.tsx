@@ -1,9 +1,3 @@
-/** 
- * Button component.
- * @author    Nigel Abrera
- * @date      March 02, 2024
- * @update    September 21, 2024
-*/
 import { useState, useCallback } from 'react';
 import styled, { css } from 'styled-components';
 import { ButtonProps } from './Button.types';
