@@ -1,14 +1,6 @@
-/**
- * Stories for Container
- * @author    Nigel Abrera 
- * @date      March 09, 2024
- */
 import { expect, within } from "@storybook/test";
 import { Meta, StoryObj } from '@storybook/react';
 import { Container } from './Container';
-// import { Card } from "../page_components/Card";
-// import { Label } from "../base_components/Label";
-
 
 const meta: Meta = {
     title: 'General Components/Container',
