@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Hero } from '../../base_components/Hero/Hero';
+import { Hero } from './Hero';
 import { expect, within } from "@storybook/test";
 
 const meta: Meta = {

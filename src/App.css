@@ -5,6 +5,7 @@
   width: 100%; /* Ensures the root element takes full width */
   text-align: center;
   height: 100vh;
+  
 };
 
 .card {
