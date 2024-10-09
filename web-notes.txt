@@ -1,3 +1,8 @@
+TODO
+- Implement Dark mode and white mode
+- Recreate Hero component
+- Implement Clientside session
+
 #F5EDED white
 #E2DAD6	dark white
 #7FA1C3	muted light blue
