@@ -1,7 +1,7 @@
-interface IconProps {
+interface SOIconProps {
     size?: 'mobile' | 'normal';
     backgroundColor?: string;
     disabled?: boolean;
 };
 
-export type { IconProps};
+export type { SOIconProps };

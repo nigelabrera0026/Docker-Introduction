@@ -1,7 +1,9 @@
 import { FooterProps } from "./Footer.types";
 import styled, { css } from 'styled-components';
 import { Text } from "../../base_components/Text";
-import { GithubIcon} from "../../base_components/Icon";
+import { GithubIcon } from "../../base_components/GithubIcon";
+import { LinkedInIcon } from "../../base_components/LinkedInIcon";
+import { SOIcon } from "../../base_components/SOIcon";
 
 /*
  * Logic
@@ -20,7 +22,7 @@ import { GithubIcon} from "../../base_components/Icon";
  */
 // TODO: Create icon holder, with anchor tag props
 
-const FooterIcons1 = styled(GithubIcon)<{size?: 'mobile' | 'normal'}>`
+const Github = styled(GithubIcon)<{size?: 'mobile' | 'normal'}>`
   ${({size}) => size === 'mobile' ? css`
     width: 15px;
     height: 15px;
@@ -30,7 +32,17 @@ const FooterIcons1 = styled(GithubIcon)<{size?: 'mobile' | 'normal'}>`
   `};
 `;
 
-const FooterIcons2 = styled(GithubIcon)<{size?: 'mobile' | 'normal'}>`
+const LinkedIn = styled(LinkedInIcon)<{size?: 'mobile' | 'normal'}>`
+  ${({size}) => size === 'mobile' ? css`
+    width: 15px;
+    height: 15px;
+  `:css`
+    width: 24px;
+    height: 24px;
+  `};
+`;
+
+const SO = styled(SOIcon)<{size?: 'mobile' | 'normal'}>`
   ${({size}) => size === 'mobile' ? css`
     width: 15px;
     height: 15px;
@@ -54,7 +66,6 @@ const FooterNav = styled.nav<FooterProps>`
 
 `;
 
-// Footer UL
 const FooterContentHolder = styled.ul<FooterProps>`
     list-style: none;
     padding: 0;
@@ -66,7 +77,6 @@ const FooterContentHolder = styled.ul<FooterProps>`
 
 const FooterContents = styled.li<FooterProps>`
     display: inline;
-
 `;
 
 const FooterText = styled(Text)<{ size?: 'mobile' | 'normal' }>`
@@ -77,11 +87,6 @@ const FooterText = styled(Text)<{ size?: 'mobile' | 'normal' }>`
         font-size: 15px;
     `};
 `;
-
-/**
- * TODO: insert the icons
- */
-
 
 const Footer = ({
     size='normal',
@@ -95,9 +100,13 @@ const Footer = ({
            <FooterNav size={size}>
                 <FooterContentHolder size={size}>
                     <FooterContents size={size}>{/* Icons*/}
-                        <FooterIcons1 size={size}/>
-                        <FooterIcons2 size={size}/>
-                        
+                        <Github size={size}/>
+                    </FooterContents>
+                    <FooterContents size={size}>
+                        <LinkedIn size={size}/>
+                    </FooterContents>
+                    <FooterContents size={size}>
+                        <SO size={size} />
                     </FooterContents>
                 </FooterContentHolder>
            </FooterNav>
