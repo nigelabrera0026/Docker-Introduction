@@ -4,6 +4,7 @@ import { NavigationBar, NavigationBarProps } from './stories/components/page_com
 import { Container, ContainerProps } from './stories/components/Container';
 import { Hero, HeroProps } from './stories/components';
 import { FooterProps, Footer } from './stories/components/page_components/Footer';
+import { ToggleProps, Toggle } from './stories/components/base_components/Toggle';
 
 
 /*
@@ -21,6 +22,11 @@ const handleButtonClick = () => {
 
 
 // Props 
+
+const toggleProps: ToggleProps = {
+  size: 'normal',
+};
+
 const buttonProps: ButtonProps = {
   size: 'normal',
   label: 'ButtonTest',
@@ -56,6 +62,7 @@ function App() {
   return (
     <Container {...containerProps}>
       <NavigationBar {...navigationProps} />
+      <Toggle {...toggleProps} />
       <Hero {...heroProps} />
       <Hero {...heroProps} />
       <Hero {...heroProps} />

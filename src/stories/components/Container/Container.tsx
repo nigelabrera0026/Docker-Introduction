@@ -90,7 +90,7 @@ By using CSS variables and not hard-coding a background color on your container,
  */
 
 const StyledContainer = styled.div<ContainerProps>`
-    /* background-color: ${({ backgroundColor }) => backgroundColor || 'transparent'}; */
+    background-color: var(--background-color);
     width: 100%;
     margin: 0;
     align-items: center;
