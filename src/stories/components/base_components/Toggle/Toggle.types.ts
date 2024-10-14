@@ -1,7 +1,8 @@
 interface ToggleProps {
     size?: 'mobile' | 'normal';
     backgroundColor?: string;
-    onToggle?: () => void;
+    onChange?: () => void;
+    isChecked?: boolean;
 };
 
 export type { ToggleProps }
