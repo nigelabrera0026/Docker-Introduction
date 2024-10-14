@@ -16,6 +16,7 @@ TODO: Check this site for reference:
 */
 
 // Functionalities
+//? This is how functionalities are used Check Button
 const handleButtonClick = () => {
   console.log('button was clicked');
 };
@@ -63,6 +64,7 @@ function App() {
     <Container {...containerProps}>
       <NavigationBar {...navigationProps} />
       <Toggle {...toggleProps} />
+      <Button {...buttonProps}/>
       <Hero {...heroProps} />
       <Hero {...heroProps} />
       <Hero {...heroProps} />

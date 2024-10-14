@@ -1,5 +1,14 @@
 import styled, { css } from 'styled-components';
+import { useState, useCallback } from 'react';
 import { ToggleProps } from './Toggle.types';
+
+/**
+ * TODO: This component is broken, slider is not showing up.un 
+ * - Color is dumb, change it,
+ * - The problem is that it is not clickable, you might want to check its function.
+ * 
+ */
+
 
 const StyledLabel = styled.label<ToggleProps>`
     position: relative;
@@ -45,10 +54,21 @@ const StyledSlider = styled.span<ToggleProps>`
 
 const Toggle = ({
     size = 'normal',
+    ...props
 }: ToggleProps) => {
+
+    const [isChecked, setIsChecked] = useState(false);
+
+    const handleToggle = useCallback(() => {
+        setIsChecked(true);
+
+        if(props.onToggle) {
+            props.onToggle();
+        };
+    }, [props]);
     return (
         <StyledLabel size={size}>
-            <StyledInput size={size}/>
+            <StyledInput size={size} onToggle={handleToggle}/>
             <StyledSlider size={size}/>
         </StyledLabel>
     );
