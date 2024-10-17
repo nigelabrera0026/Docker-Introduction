@@ -5,4 +5,4 @@ interface ToggleProps {
     isChecked?: boolean;
 };
 
-export type { ToggleProps }
+export type { ToggleProps };

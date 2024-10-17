@@ -1,12 +1,18 @@
 TODO
-- Implement Dark mode and white mode
 - Recreate Hero component
+- Reconfigure Footer
+- Reconfigure NavBar
 - Implement Clientside session
+Less Priority
+-Implement Dark mode and white mode
 
 #F5EDED white
 #E2DAD6	dark white
 #7FA1C3	muted light blue
 #6482AD muted dark blue
 
-insp: https://webflow.com/ix2
-
+insp: 
+    https://webflow.com/ix2
+    https://github.com/DustinBrett/daedalOS   {Holy cow this website}
+        Check READMe for resources
+    
