@@ -14,7 +14,7 @@ export * from './base_components/TableRow';
 export * from './base_components/TableCell';
 export * from './base_components/TableHeader';
 export * from './base_components/Label';
-export * from './base_components/GithubIcon';
+export * from './svg/GithubIcon';
 
 // Page Components
 export * from './page_components/Card';

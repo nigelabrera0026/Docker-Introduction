@@ -21,7 +21,7 @@ const StyledText = styled.p<TextProps>`
   ${({ error }) => error && css`color: red;`};
 `;
 
-export const Text = ({
+const Text = ({
   size = 'normal',
   backgroundColor,
   error = false,
@@ -38,5 +38,7 @@ export const Text = ({
       error={error} {...props}>
       { children }
     </StyledText>
-  )
+  );
 };
+
+export { Text };

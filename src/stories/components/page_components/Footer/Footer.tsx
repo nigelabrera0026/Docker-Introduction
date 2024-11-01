@@ -1,25 +1,10 @@
 import { FooterProps } from "./Footer.types";
 import styled, { css } from 'styled-components';
 import { Text } from "../../base_components/Text";
-import { GithubIcon } from "../../base_components/GithubIcon";
-import { LinkedInIcon } from "../../base_components/LinkedInIcon";
-import { SOIcon } from "../../base_components/SOIcon";
-
-/*
- * Logic
- * 
- * <FooterContainer>
- *      <FooterNav>
- *          <FooterUL> Add more ul if you need a layer
- *              <footer-li></footer-li>
- *          </footer-ul>
- *      </FooterNav>
- *      <footer-ul>
- *          <footer-li></footer-li>
- *      </footer-ul>
- * </FooterContainer>
- * 
- */
+import { GithubIcon } from "../../svg/GithubIcon";
+import { LinkedInIcon } from "../../svg/LinkedInIcon";
+import { SOIcon } from "../../svg/SOIcon";
+import { MailIcon } from "../../svg/MailIcon";
 
 // Date
 const date = new Date();
@@ -57,24 +42,24 @@ const SO = styled(SOIcon)<{size?: 'mobile' | 'normal'}>`
 `;
 
 const FooterText = styled(Text)<{ size?: 'mobile' | 'normal' }>`
-    color: white;
-    ${({size}) => size === 'mobile' ? css`
-        font-size: 10px;
-    `: css`
-        font-size: 15px;
-    `};
-    margin: 0; // Sets the footer stick at the bottom
-    padding-left: 10px;
+  color: white;
+  ${({size}) => size === 'mobile' ? css`
+      font-size: 10px;
+  `: css`
+      font-size: 15px;
+  `};
+  margin: 0; // Sets the footer stick at the bottom
+  padding-left: 10px;
 `;
 
-const FooterA = styled.a<FooterProps>`
-  color: white;
-  text-decoration: none;
-  &:hover {
-    text-decoration: none;
-    cursor: pointer; 
-    color: white;
-  }
+const Mail = styled(MailIcon)<{size?: 'mobile' | 'normal'}>`
+  ${({size}) => size === 'mobile' ? css`
+    width: 15px;
+    height: 15px;
+  `:css`
+    width: 30px;
+    height: 30px;
+  `};
 `;
 
 // Components
@@ -93,14 +78,14 @@ const FooterDiv = styled.div<FooterProps>`
 const FooterUL = styled.ul<FooterProps>`
   list-style: none;
   padding: 0px 0px;
-  padding-top: 30px;
+  padding-top: 10px; // Space below the icons
   margin: 0; // Sets the footer stick at the bottom
 `;
 
 const FooterUL2 = styled.ul<FooterProps>`
   list-style: none;
-  padding: 20px 30px;
-  /* padding-top: 20px; */
+  padding-right: 20px;
+  margin-top: 20px;
 `;
 
 const FooterUL3 = styled.ul<FooterProps>`
@@ -149,9 +134,7 @@ const Footer = ({
         <FooterUL2> { /* Add a mail component with function to redirect */}
           <FooterText>Contact Information</FooterText>
           <FooterText>Contact Information</FooterText>
-          <FooterText>
-            nigel26.a@gmail.com
-          </FooterText>
+          <MailIcon/>
         </FooterUL2>
       </FooterDiv>
     </FooterContainer>
