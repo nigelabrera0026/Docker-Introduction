@@ -5,6 +5,7 @@ import { GithubIcon } from "../../svg/GithubIcon";
 import { LinkedInIcon } from "../../svg/LinkedInIcon";
 import { SOIcon } from "../../svg/SOIcon";
 import { MailIcon } from "../../svg/MailIcon";
+import { Loc } from "../../svg/LocationIcon";
 
 // Date
 const date = new Date();
@@ -49,8 +50,21 @@ const FooterText = styled(Text)<{ size?: 'mobile' | 'normal' }>`
       font-size: 15px;
   `};
   margin: 0; // Sets the footer stick at the bottom
-  padding-left: 10px;
+  padding-left: 50px;
 `;
+
+const FooterTextContactInfo = styled(Text)<{ size?: 'mobile' | 'normal' }>`
+  color: white;
+  ${({size}) => size === 'mobile' ? css`
+      font-size: 10px;
+  `: css`
+      font-size: 20px;
+  `};
+
+  margin: 0; 
+  padding-bottom: 10px;
+`;
+
 
 const Mail = styled(MailIcon)<{size?: 'mobile' | 'normal'}>`
   ${({size}) => size === 'mobile' ? css`
@@ -78,13 +92,13 @@ const FooterDiv = styled.div<FooterProps>`
 const FooterUL = styled.ul<FooterProps>`
   list-style: none;
   padding: 0px 0px;
-  padding-top: 10px; // Space below the icons
+  padding-top: 20px; // Space below the icons
   margin: 0; // Sets the footer stick at the bottom
 `;
 
 const FooterUL2 = styled.ul<FooterProps>`
   list-style: none;
-  padding-right: 20px;
+  padding-right: 70px;
   margin-top: 20px;
 `;
 
@@ -132,8 +146,8 @@ const Footer = ({
       </FooterDiv>
       <FooterDiv> {/* A div container that is set for contact info on the right side*/}
         <FooterUL2> { /* Add a mail component with function to redirect */}
-          <FooterText>Contact Information</FooterText>
-          <FooterText>Contact Information</FooterText>
+          <FooterTextContactInfo>CONTACT INFORMATION</FooterTextContactInfo>
+          <Loc/>
           <Mail/>
         </FooterUL2>
       </FooterDiv>
