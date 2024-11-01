@@ -134,7 +134,7 @@ const Footer = ({
         <FooterUL2> { /* Add a mail component with function to redirect */}
           <FooterText>Contact Information</FooterText>
           <FooterText>Contact Information</FooterText>
-          <MailIcon/>
+          <Mail/>
         </FooterUL2>
       </FooterDiv>
     </FooterContainer>

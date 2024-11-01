@@ -6,9 +6,7 @@ import { NavigationBarProps } from './NavigationBar.types';
 /*
 TODO: Configure alignments of components and its children.
 TODO: Make navbar stick when scrolling down.
-TODO: Recreate hero image and learn how to make a slideshow.
-TODO: Implement styling and confirm in GPT.
-FIXME Remove padding or the size of the button in the dropdown component.
+TODO: Change Logo
 */
 
 const ListContainer = styled.ul<NavigationBarProps>`
