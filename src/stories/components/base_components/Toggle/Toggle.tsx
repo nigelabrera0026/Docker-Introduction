@@ -3,10 +3,9 @@ import { useState, useCallback } from 'react';
 import { ToggleProps } from './Toggle.types';
 
 /**
- * TODO: Implement dark mode and shit.
+ * TODO: Imbue this on the navigation
  * 
  */
-
 
 const StyledLabel = styled.label<ToggleProps>`
     position: relative;
@@ -34,13 +33,13 @@ const StyledSlider = styled.span<ToggleProps>`
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: ${({ backgroundColor }) => backgroundColor || '#ccc'};
+    background-color: ${({ backgroundColor, isChecked }) => isChecked ? backgroundColor || '#000':"#2196F3"};
     transition: 0.4s;
     border-radius: 34px;
 
     &::before {
         position: absolute;
-        content: "";
+        content: ""; // TODO: Change content to add an SVG of sun and moon when switched using the function below. 
         height: 26px;
         width: 26px;
         left: 4px;
@@ -49,24 +48,26 @@ const StyledSlider = styled.span<ToggleProps>`
         transition: 0.4s;
         border-radius: 50%;
         transform: ${({ isChecked }) =>
-            isChecked ? 'translateX(26px)' : 'translateX(0)'};
+            isChecked ? 'translateX(26px)' : 'translateX(0)'
+            };
     };
 `;
 
 const Toggle = ({
     size = 'normal',
     backgroundColor,
-    ...props
+    onChange
 }: ToggleProps) => {
     const [isChecked, setIsChecked] = useState(false);
 
     const handleToggle = useCallback(() => {
-        setIsChecked(!isChecked);
+        const theme = !isChecked;
+        setIsChecked(theme);
 
-        if (props.onChange) {
-            props.onChange();
+        if (onChange) {
+            onChange(theme); 
         };
-    }, [isChecked, props]);
+    }, [isChecked, onChange]);
 
     return (
         <StyledLabel size={size}>

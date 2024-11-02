@@ -4,9 +4,9 @@ import { Dropdown } from '../Dropdown/Dropdown';
 import { NavigationBarProps } from './NavigationBar.types';
 
 /*
-TODO: Configure alignments of components and its children.
+TODO: Input the theme toggler beside the dropdown.
 TODO: Make navbar stick when scrolling down.
-TODO: Change Logo
+TODO: Change Logo.
 */
 
 const ListContainer = styled.ul<NavigationBarProps>`

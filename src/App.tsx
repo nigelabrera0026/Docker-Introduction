@@ -6,7 +6,6 @@ import { Hero, HeroProps } from './stories/components';
 import { FooterProps, Footer } from './stories/components/page_components/Footer';
 import { ToggleProps, Toggle } from './stories/components/base_components/Toggle';
 
-
 /*
  * Logic flow
 TODO: Create section components to build up the pages
@@ -21,11 +20,14 @@ const handleButtonClick = () => {
   console.log('button was clicked');
 };
 
+const themeToggler = (isChecked: boolean) => {
+  console.log(isChecked ? "Dark mode" : "Light mode");
+};
 
 // Props 
-
 const toggleProps: ToggleProps = {
   size: 'normal',
+  onChange: themeToggler,
 };
 
 const buttonProps: ButtonProps = {
@@ -65,10 +67,6 @@ function App() {
       <NavigationBar {...navigationProps} />
       <Toggle {...toggleProps} />
       <Button {...buttonProps}/>
-      <Hero {...heroProps} />
-      <Hero {...heroProps} />
-      <Hero {...heroProps} />
-      <Hero {...heroProps} />
       <Hero {...heroProps} />
       <Hero {...heroProps} />
       <Hero {...heroProps} />

@@ -1,8 +1,8 @@
 interface ToggleProps {
     size?: 'mobile' | 'normal';
     backgroundColor?: string;
-    onChange?: () => void;
-    isChecked?: boolean;
+    isChecked?: boolean; // seemns redundant but the only purpose is to evade the type error logs.
+    onChange?: (isChecked: boolean) => void;
 };
 
 export type { ToggleProps };
