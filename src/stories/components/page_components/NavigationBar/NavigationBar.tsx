@@ -7,6 +7,7 @@ import { NavigationBarProps } from './NavigationBar.types';
 TODO: Input the theme toggler beside the dropdown.
 TODO: Make navbar stick when scrolling down.
 TODO: Change Logo.
+FIXME: Change hover effect on dropdown
 */
 
 const ListContainer = styled.ul<NavigationBarProps>`

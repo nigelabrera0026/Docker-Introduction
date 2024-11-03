@@ -105,6 +105,7 @@ const FooterUL2 = styled.ul<FooterProps>`
 const FooterUL3 = styled.ul<FooterProps>`
   list-style: none;
   padding: 0px 20px;
+  padding-left: 50px; // LoL seems redundant but meh, setted this up to center the icons cuz im lazy
   margin: 0;
 `;
 
