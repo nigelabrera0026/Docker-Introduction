@@ -1,12 +1,9 @@
-/** 
- * Dropdown component.
- * @author    Nigel Abrera
- * @date      March 03, 2024
-*/
 import { useState } from 'react';
 import styled, { css } from 'styled-components';
 import { DropdownProps } from './Dropdown.types';
 import { Text } from '../../base_components/Text';
+
+// TODO: Change hover effect of dropdown when it is darkmode
 
 const DropdownContainer = styled.div<{ size: 'mobile' | 'normal'}>`
   position: relative;

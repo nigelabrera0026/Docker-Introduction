@@ -28,7 +28,13 @@ const ImageComponent = styled.img<ImageProps>`
   `};
 `;
 
-export const Image = ({src, alt, size = 'normal', disabled, backgroundColor} : ImageProps) => {
+export const Image = ({
+  src, 
+  alt, 
+  size = 'normal', 
+  disabled, 
+  backgroundColor
+} : ImageProps) => {
   return (
     <div style={{backgroundColor}}>
       <ImageComponent disabled={disabled} src={src} alt={alt} size={size} data-testid={"Image"}/>
