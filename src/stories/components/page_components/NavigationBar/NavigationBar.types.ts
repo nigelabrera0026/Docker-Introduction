@@ -8,6 +8,8 @@ interface NavigationBarProps {
   size?: 'mobile' | 'normal';
   disabled?: boolean;
   primary?: boolean;
+  src?: string;
+  alt?: string;
 };
 
 export type { NavigationBarProps };

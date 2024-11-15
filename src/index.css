@@ -70,6 +70,6 @@ button:focus-visible {
 @media (prefers-color-scheme: dark) {
   :root {
     color: #213547;
-    --background-color: #424242; /*! To change the bg, this is the correct one to change */
+    --background-color: black; /*! #424242To change the bg, this is the correct one to change */
   }
 }

@@ -11,10 +11,10 @@ const ImageComponent = styled.img<ImageProps>`
   border: 0 solid white;
   border-radius: 10%;
 
+  //! TODO - Before deleting make sure to add size style in card component
   ${({ size }) => size === 'mobile' ? css`
     width: 55px;
     height: 65px;
-
   ` : css`
     width: 120px;
     height: 135px;

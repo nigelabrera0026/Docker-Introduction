@@ -17,14 +17,16 @@ TODO: Change Logo.
   
 //   `}
 // `;
-//! Check the types to implement src of image. I'm tired for now.
+//! TODO - Implement the size whenever it is used but delete the size in the image component itself
+
 const Logo = styled(Image)<NavigationBarProps>`
+  float: left;
   ${({size}) => size === 'mobile' ? css`
     // TODO: Change this when editing the mobile version
     height: 20px;
     width: 30px;
   ` : css`
-    height: 20px;
+    height: 10px;
     width: 30px;
   `}
   
@@ -63,6 +65,8 @@ const TextStyling = styled(Text)<{ size?: 'mobile' | 'normal' }>`
 `;
 
 const NavigationBar = ({
+  src,
+  alt,
   size = 'normal',
   backgroundColor,
   disabled = false,
@@ -74,7 +78,7 @@ const NavigationBar = ({
       backgroundColor={backgroundColor}
       disabled={disabled}>
       <NameHolder>
-        <TextStyling size={size} children="NIGEL"/>
+        <Logo src={src} alt={alt} size={size} />
       </NameHolder>
       <DropHolder>
         <Dropdown size={size} />

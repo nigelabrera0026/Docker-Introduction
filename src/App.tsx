@@ -40,6 +40,8 @@ const buttonProps: ButtonProps = {
 const navigationProps: NavigationBarProps = {
   size: 'normal',
   disabled: false,
+  src: 'WMLog.png', //? Doesn't need condition since it changes automatically if themes are chaged.
+  alt: 'White mode Logo',
 };
 
 const containerProps: ContainerProps = {
